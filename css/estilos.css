@@ -1,0 +1,411 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #1977cc;
+}
+
+a:hover {
+  color: #3291e6;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+p {
+  text-align: justify;
+}
+  
+/*--------------------------------------------------------------
+# Social
+--------------------------------------------------------------*/
+
+ .background-image{
+      
+      background-image: url(../images/school.jpg);
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: bottom ;
+    
+  }
+
+  .background-image-noticias{
+      
+    background-image: url(../images/periodico\ viejo.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom ; }
+
+    .background-image-eventos{
+      
+      background-image: url(../images/docente\ animada.jpg);
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: initial ; }
+  
+    .background-image-honores{
+      
+      background-image: url(../images/);
+      height: 100vh;
+   
+    
+}
+  /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#font-white{
+  color: #fdfdfd;
+}
+
+#header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    top: 40px;
+    box-shadow: 0px 2px 15px rgb(255, 255, 255);
+  }
+  
+#header.header-scrolled {
+    top: 0;
+  }
+ 
+  
+  #header .rowinfo {
+   
+    font-size: 1.5rem;
+    margin: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 0%;
+    padding:1rem ;
+
+    line-height: 1;
+    font-weight: 50;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+    }
+  #header .addres {
+    font-size: 1.5rem;
+    margin: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 0%;
+    padding:1rem ;
+
+    line-height: 1;
+    font-weight: 50;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+  }
+  header .bg-red{
+    background-color:rgba(37,30,160,1);
+  }
+
+  .logo {
+    max-height: 5rem;
+    align-content: space-between;
+   
+  }
+  
+  .name {
+    
+      font-size: 3rem;
+      text-align: left;
+      color: black;
+      font: "Poppins", sans-serif;
+      align-content: space-between;
+    }
+  
+
+  .lema {
+      font-size: 3rem;
+      text-align: justify;
+      color: black;
+      font-style: oblique;
+      font-variant:inherit;
+      text-align: space-between ;
+  }
+
+/*--------------------------------------------------------------
+# index informacion video
+--------------------------------------------------------------*/
+.informacion-index{
+  box-shadow: 0 0 .5rem rgba(37,60,160,1);
+  background-color:darkred;
+  color:whitesmoke;
+}
+/*
+  INFORMATION
+*/
+.border-content{
+  box-shadow: 0 0 1rem rgba(37,30,160,1);
+  background-color:darkred;
+  color:whitesmoke;
+}
+
+.border-content-blue{
+  box-shadow: 0 0 1rem red;
+  background-color: rgba(37,30,160,1);;
+  color:whitesmoke;
+}
+
+/*
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+}
+
+.back-to-top i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: #1977cc;
+  color: #fff;
+  transition: all 0.4s;
+}
+
+.back-to-top i:hover {
+  background: #1c84e3;
+  color: #fff;
+}
+
+.datepicker-dropdown {
+  padding: 20px !important;
+}
+
+/*--------------------------------------------------------------
+# Footer indexxx
+--------------------------------------------------------------*/
+#social .contact-info a, #social-footer .contact-info a {
+  color: #444444;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+#social .contact-info a:hover, #social-footer .contact-info a:hover {
+  color: #1977cc;
+}
+#social .social-network a, #social-footer .social-footer-network a{
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  background-color: #1977cc;
+  border: .1rem #1977cc solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: .8s;
+  text-decoration: none;
+}
+
+#social .social-network a, #social-footer .social-footer-network a{
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  background-color: #1977cc;
+  border: .1rem #1977cc solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: .8s;
+  text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  color: #444444;
+  font-size: 14px;
+  background: #f1f7fd;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h4 {
+  font-size: 22px;
+  margin: 0 0 30px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #777777;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #1c84e3;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #777777;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #1977cc;
+}
+
+#footer .footer-newsletter {
+  font-size: 15px;
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 50px;
+  text-align: left;
+  border: 1px solid #bfdcf7;
+}
+
+#footer .footer-newsletter form input[type="number"] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px;
+  background: #1977cc;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 50px;
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+  background: #1c84e3;
+}
+
+#footer .social-links a{
+  font-size: 18px;
+  display: inline-block;
+  background: #1977cc;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover{
+  background: #1c84e3;
+  color: #fff;
+  text-decoration: none;
+}
+/*--------------------------------------------------------------
+# Cuadro de Honor
+--------------------------------------------------------------*/
+#card{
+  border-color: rgb(197, 129, 65);
+  border-width: 1rem;
+  border-style: inset;
+}
+
+#fondocard{
+  background-image: url(../images/school.jpg);
+  height: flex;
+}
+.honores{
+  background-color: rgba(37,60,160,1) ;
+  color: antiquewhite;
+}
+.card{
+  box-shadow: 0 0 .8rem #fdfdfd;
+}
+.card-body{
+  background-color: rgba(37,60,190,1);
+  color: black;
+}
+
+
+.border-content{
+  box-shadow: 0 0 .5rem rgba(37,60,160,1);
+  background-color:darkred;
+  color:whitesmoke;
+}
+
