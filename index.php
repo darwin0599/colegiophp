@@ -1,71 +1,29 @@
 <?php include ('header.php'); ?>
 
-<!-- ======= Section Menu ======= -->
+<!-- ======= Section Images ======= -->
 
-<section class="service container m-auto row-21 justify-content-center py-21">
-    <div class="col-12 col-md-3 col-lg-3">
-        <div class="card">
-            <div class="card-body d-flex justify-content-around align-items-center">
-                <span><i class="fa fa-users fa-3x"></i></span>
-                <a href="horarios.php">Cronograma</a>
+<div class="background-image">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 text-center">
+                <a id="logo" href="index.php" class="logo">
+                    <img src="images/circle-cropped.png" alt="Logo escudo institucional" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-12 mt-5">
+                <h1 class="name text-center">
+                    <a href="index.php">Centro Educativo Mi Pequeño Mundo</a>
+                </h1>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <h2 class="lema text-center">
+                    <a href="index.php">Formando Futuros Soñadores</a>
+                </h2>
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-3 col-lg-3">
-        <div class="card">
-            <div class="card-body d-flex justify-content-around align-items-center">
-                <span><i class="fa fa-users fa-3x"></i></span>
-                <a href="honores.php">Cuadro Honor</a>
-            </div>
-        </div>
-    </div>
+</div>
 
-    <div class="col-12 col-md-4 col-lg-3">
-        <div class="card">
-            <div class="card-body d-flex align-items-center">
-                <span class="pr-2"><i class="fa fa-users fa-3x"></i></span>
-                <a href="docentes.php">Docentes Administrativos</a>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-md-3 col-lg-3">
-        <div class="card">
-            <div class="card-body d-flex align-items-center">
-                <span class="pr-3"><i class="fa fa-users fa-3x"></i></span>
-                <a href="eventos.php">Eventos</a>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-md-4 col-lg-3">
-        <div class="card">
-            <div class="card-body d-flex align-items-center">
-                <span class="pr-3"><i class="fa fa-users fa-3x"></i></span>
-                <a href="informacion.php">Información Institucional</a>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-md-3 col-lg-3">
-        <div class="card">
-            <div class="card-body d-flex justify-content-around align-items-center">
-                <span><i class="fa fa-users fa-3x"></i></span>
-                <a href="galeria.php">Multimedia</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-md-4 col-lg-3">
-        <div class="card">
-            <div class="card-body d-flex align-items-center">
-                <span class="pr-2"><i class="fa fa-users fa-3x"></i></span>
-                <a href="manual.php">Manual de convivencia</a>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- ======= Imagenes presentación  ======= -->
 <div class="container border-content pt-2 pb-2">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -110,6 +68,7 @@
         </div>
     </div>
 </div>
+
 <div class="container d-lg-flex d-md-flex ">
     <div class="container col-12 col-lg-10 col-md-6 justify-content-center border-content">
         <a id="" href="index.php" class="logo"><img src="images/globos jardin.jpg"
@@ -149,7 +108,6 @@
                 </div>
             </div><!-- ===== Final del contenido inicial ======= -->
         </div>
-    </div>
     </div>
 </section>
 <!--Ens div important-->
