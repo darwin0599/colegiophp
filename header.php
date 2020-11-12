@@ -23,46 +23,46 @@
     <header>
         <!--Social-->
         <div class="social">
-            <ul>
+            <ul class="d-inline">
                 <li>
                     <a href="horarios.php" class="cronograma d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3"></i> 
+                        <i class="far fa-calendar-alt mr-3 width-icons"></i> 
                         <p class="m-0">Cronograma</p>
                     </a>
                 </li>
                 <li>
                     <a href="honores.php" class="cuadro d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3"></i>
+                        <i class="fas fa-award mr-3 width-icons"></i>
                         <p class="m-0">Cuadro Honor</p>
                     </a>
                 </li>
                 <li>
                     <a href="docentes.php" class="docentes d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3"></i>
+                        <i class="fas fa-chalkboard-teacher mr-3 width-icons"></i>
                         <p class=m-0>Docentes</p>
                     </a>
                 </li>
                 <li>
                     <a href="eventos.php" class="eventos d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3"></i>
+                        <i class="far fa-list-alt mr-3 width-icons"></i>
                         <p class=m-0>Eventos</p>
                     </a>
                 </li>
                 <li>
                     <a href="informacion.php" class="info d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3"></i>
+                        <i class="fas fa-school mr-3 width-icons"></i>
                         <p class=m-0>Información Institucional</p>
                     </a>
                 </li>
                 <li>
                     <a href="galeria.php" class="multi d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3"></i>
+                        <i class="far fa-images mr-3 width-icons"></i>
                         <p class=m-0>Multimedia</p>
                     </a>
                 </li>
                 <li>
                     <a href="honores.php" class="manual d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3"></i>
+                        <i class="fas fa-book mr-3 width-icons"></i>
                         <p class=m-0>Manual de convivencia</p>
                     </a>
                 </li>
@@ -96,14 +96,12 @@
             </div>
         </div>
         <!--Navbar, menú-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-red d-flex ">
+        <nav class="navbar navbar-expand-md navbar-dark bg-red">
+            <a class="navbar-brand" href="#">Mi pequeño mundo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="container" data-aos="fade-down">
-                <a class="navbar-brand d-block d-md-none" href="#">Bienvenidos a Mi pequeño mundo</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item active">

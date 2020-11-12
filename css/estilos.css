@@ -58,8 +58,8 @@ p {
   /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
   left: 0;
   /* Establecemos la barra en la izquierda */
-  top: 200px;
-  /* Bajamos la barra 200px de arriba a abajo */
+  top: 140px;
+  /* Bajamos la barra 140px de arriba a abajo */
   z-index: 2000;
   /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
 }
@@ -121,6 +121,10 @@ p {
 
 .social ul li a:hover p {
   display: block;
+}
+
+.width-icons {
+  width: 1rem !important;
 }
 
 /*--------------------------------------------------------------
