@@ -26,44 +26,44 @@
             <ul class="d-inline">
                 <li>
                     <a href="horarios.php" class="cronograma d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt mr-3 width-icons"></i> 
-                        <p class="m-0">Cronograma</p>
+                        <i class="far fa-calendar-alt width-icons"></i> 
+                        <p class="m-0 ml-3">Cronograma</p>
                     </a>
                 </li>
                 <li>
                     <a href="honores.php" class="cuadro d-inline-flex align-items-center">
-                        <i class="fas fa-award mr-3 width-icons"></i>
-                        <p class="m-0">Cuadro Honor</p>
+                        <i class="fas fa-award width-icons"></i>
+                        <p class="m-0 ml-3">Cuadro Honor</p>
                     </a>
                 </li>
                 <li>
                     <a href="docentes.php" class="docentes d-inline-flex align-items-center">
-                        <i class="fas fa-chalkboard-teacher mr-3 width-icons"></i>
-                        <p class=m-0>Docentes</p>
+                        <i class="fas fa-chalkboard-teacher width-icons"></i>
+                        <p class="m-0 ml-3">Docentes</p>
                     </a>
                 </li>
                 <li>
                     <a href="eventos.php" class="eventos d-inline-flex align-items-center">
-                        <i class="far fa-list-alt mr-3 width-icons"></i>
-                        <p class=m-0>Eventos</p>
+                        <i class="far fa-list-alt width-icons"></i>
+                        <p class="m-0 ml-3">Eventos</p>
                     </a>
                 </li>
                 <li>
                     <a href="informacion.php" class="info d-inline-flex align-items-center">
-                        <i class="fas fa-school mr-3 width-icons"></i>
-                        <p class=m-0>Información Institucional</p>
+                        <i class="fas fa-school width-icons"></i>
+                        <p class="m-0 ml-3">Información Institucional</p>
                     </a>
                 </li>
                 <li>
                     <a href="galeria.php" class="multi d-inline-flex align-items-center">
-                        <i class="far fa-images mr-3 width-icons"></i>
-                        <p class=m-0>Multimedia</p>
+                        <i class="far fa-images width-icons"></i>
+                        <p class="m-0 ml-3">Multimedia</p>
                     </a>
                 </li>
                 <li>
                     <a href="honores.php" class="manual d-inline-flex align-items-center">
-                        <i class="fas fa-book mr-3 width-icons"></i>
-                        <p class=m-0>Manual de convivencia</p>
+                        <i class="fas fa-book width-icons"></i>
+                        <p class="m-0 ml-3">Manual de convivencia</p>
                     </a>
                 </li>
             </ul>
@@ -96,14 +96,14 @@
             </div>
         </div>
         <!--Navbar, menú-->
-        <nav class="navbar navbar-expand-md navbar-dark bg-red">
-            <a class="navbar-brand" href="#">Mi pequeño mundo</a>
+        <nav class="navbar navbar-expand-md navbar-dark bg-red mt-1">
+            <a class="navbar-brand d-block d-md-none" href="#">Mi pequeño mundo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="container" data-aos="fade-down">
                 <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav text-right">
                         <li class="nav-item active">
                             <a class="nav-link text-white" href="Index.php">Inicio</a>
                         </li>
