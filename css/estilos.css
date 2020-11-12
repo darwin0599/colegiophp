@@ -20,13 +20,25 @@ p {
   text-align: justify;
 }
 
+.color-blue {
+  color: #007bff !important;
+}
+
+.bg-color-blue-dark {
+  background-color: #251ea0 !important;
+}
+
+.bg-color-blue-light {
+  background-color: #007bff !important;
+}
+
 /*--------------------------------------------------------------
 # Social
 --------------------------------------------------------------*/
 
 .background-image {
   background-image: url(../images/school.jpg);
-  height: 100vh;
+  height: 80vh;
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
@@ -34,7 +46,7 @@ p {
 
 .background-image-noticias {
   background-image: url(../images/periodico\ viejo.jpg);
-  height: 100vh;
+  height: 80vh;
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
@@ -42,7 +54,7 @@ p {
 
 .background-image-eventos {
   background-image: url(../images/docente\ animada.jpg);
-  height: 100vh;
+  height: 80vh;
   background-size: cover;
   background-attachment: fixed;
   background-position: initial;
@@ -50,7 +62,7 @@ p {
 
 .background-image-honores {
   background-image: url(../images/);
-  height: 100vh;
+  height: 80vh;
 }
 
 .social {
@@ -172,7 +184,7 @@ p {
 }
 
 header .bg-red {
-  background-color: rgba(37, 30, 160, 1);
+  background-color: #007bff;
 }
 
 .logo {
@@ -211,6 +223,11 @@ header .bg-red {
   INFORMATION
 */
 
+.img-carousel {
+  width: 100%;
+  height: 80vh;
+}
+
 .border-content {
   box-shadow: 0 0 1rem rgba(37, 30, 160, 1);
   background-color: darkred;
@@ -220,7 +237,6 @@ header .bg-red {
 .border-content-blue {
   box-shadow: 0 0 1rem red;
   background-color: rgba(37, 30, 160, 1);
-  ;
   color: whitesmoke;
 }
 
