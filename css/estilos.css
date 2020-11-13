@@ -240,6 +240,15 @@ header .bg-red {
   color: whitesmoke;
 }
 
+.tabbable .nav-tabs {
+  overflow-x: auto !important;
+  overflow-y:hidden !important;
+  flex-wrap: nowrap !important;
+}
+.tabbable .nav-tabs .nav-link {
+ white-space: nowrap !important;
+}
+
 /*
 # Back to top button
 --------------------------------------------------------------*/
