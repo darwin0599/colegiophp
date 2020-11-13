@@ -31,6 +31,48 @@ p {
 .bg-color-blue-light {
   background-color: #007bff !important;
 }
+/*--------------------------------------------------------------
+# Footer indexxx
+--------------------------------------------------------------*/
+
+#social .contact-info a, #social-footer .contact-info a {
+  color:#000000;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+#social .contact-info a:hover, #social-footer .contact-info a:hover {
+  color: #1977cc;
+}
+
+#social .social-network a, #social-footer .social-footer-network a {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  background-color: #1977cc;
+  border: .1rem #1977cc solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: .8s;
+  text-decoration: none;
+}
+
+#social .social-network a, #social-footer .social-footer-network a {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  background-color: #1977cc;
+  border: .1rem #1977cc solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: .8s;
+  text-decoration: none;
+}
+
 
 /*--------------------------------------------------------------
 # Social
@@ -235,7 +277,7 @@ header .bg-red {
 }
 
 .border-content-blue {
-  box-shadow: 0 0 1rem red;
+  box-shadow: 0 0 1r #1977cc;
   background-color: rgba(37, 30, 160, 1);
   color: whitesmoke;
 }
@@ -249,7 +291,7 @@ header .bg-red {
  white-space: nowrap !important;
 }
 
-/*
+/*-------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 
@@ -283,54 +325,13 @@ header .bg-red {
   padding: 20px !important;
 }
 
-/*--------------------------------------------------------------
-# Footer indexxx
---------------------------------------------------------------*/
-
-#social .contact-info a, #social-footer .contact-info a {
-  color: #444444;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-#social .contact-info a:hover, #social-footer .contact-info a:hover {
-  color: #1977cc;
-}
-
-#social .social-network a, #social-footer .social-footer-network a {
-  display: inline-flex;
-  width: 2rem;
-  height: 2rem;
-  color: white;
-  background-color: #1977cc;
-  border: .1rem #1977cc solid;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  transition: .8s;
-  text-decoration: none;
-}
-
-#social .social-network a, #social-footer .social-footer-network a {
-  display: inline-flex;
-  width: 2rem;
-  height: 2rem;
-  color: white;
-  background-color: #1977cc;
-  border: .1rem #1977cc solid;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  transition: .8s;
-  text-decoration: none;
-}
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 #footer {
-  color: #444444;
+  color: #ffffff;
   font-size: 14px;
   background: #f1f7fd;
 }
@@ -358,13 +359,13 @@ header .bg-red {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
-  color: #777777;
+  color: #ffffff;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: #ffffff;
   position: relative;
   padding-bottom: 12px;
 }
@@ -397,7 +398,7 @@ header .bg-red {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: #ffffff;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -415,7 +416,7 @@ header .bg-red {
 #footer .footer-newsletter h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: #ffffff;
   position: relative;
   padding-bottom: 12px;
 }
