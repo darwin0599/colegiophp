@@ -13,12 +13,12 @@
           <div class="container mt-3">  
             <div class="row">
               <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-center">
-                <img width="450" height="315" src="images/almuerzo_niños.jpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></img>
+                <img width="450" height="315" src="images/evento_independencia.jpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></img>
                 <a href="" class="" data-vbtype="video" data-autoplay="true"></a>
               </div>
               <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-4 bg-color-blue-light ">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 > Estudios muestran los beneficios de comer acompañado
+              <h4 > Celebración Dia De La Independencia
               </h4>
                     <p class="text-white">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quam porro dolores recusandae molestias aspernatur praesentium nisi modi excepturi! Eos consequuntur sequi sapiente dolore numquam alias, ipsa laudantium? Doloremque, delectus!
@@ -45,12 +45,12 @@
           <div class="container mt-3">  
             <div class="row">
               <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-center">
-                <img width="450" height="315" src="images/almuerzo_niños.jpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></img>
+                <img width="450" height="315" src="images/evento_dia_docente.jpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></img>
                 <a href="" class="" data-vbtype="video" data-autoplay="true"></a>
               </div>
               <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-4 bg-color-blue-light ">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 > Estudios muestran los beneficios de comer acompañado
+              <h4 > Celebración Dia Del Docente
               </h4>
                     <p class="text-white">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quam porro dolores recusandae molestias aspernatur praesentium nisi modi excepturi! Eos consequuntur sequi sapiente dolore numquam alias, ipsa laudantium? Doloremque, delectus!
