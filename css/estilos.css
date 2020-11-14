@@ -501,11 +501,6 @@ header .bg-red {
   box-shadow: 0 0 .8rem #fdfdfd;
 }
 
-.card-body {
-  background-color: rgba(37, 60, 190, 1);
-  color: black;
-}
-
 .border-content {
   box-shadow: 0 0 .5rem rgba(37, 60, 160, 1);
   background-color: darkred;
