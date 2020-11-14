@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="honores.php" class="manual d-inline-flex align-items-center">
+                    <a href="manual.php" class="manual d-inline-flex align-items-center">
                         <i class="fas fa-book width-icons"></i>
                         <p class="m-0 ml-3">Manual de convivencia</p>
                     </a>
