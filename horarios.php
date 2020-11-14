@@ -27,6 +27,23 @@
            <p class="italic text-center"></p>
         </div>
         <div class="col 12 mt-3">
+          <p class="h4 text-center color-blue mb-3 bg-color-blue-light text-white p-2">HORARIO JARDIN </p>
+        </div>
+      </div>  
+    <div class="row">
+      <div class="container">
+        <div class="col-12 ml-0">
+            <div class="horarios">
+                <a href="images/HorarioJardin.png"
+                    target="_blank">
+                    <img src="images/HorarioJardin.png" alt="Cronograma " class="img-fluid">
+                </a>
+            </div> 
+        </div>
+      </div>
+    </div> 
+    <div class="container mt-3 mb-3">
+        <div class="col 12 mt-3">
           <p class="h4 text-center color-blue mb-3 bg-color-blue-light text-white p-2">HORARIO PREJARDIN </p>
         </div>
       </div>  
@@ -35,6 +52,23 @@
         <div class="col-12 ml-0">
             <div class="horarios">
                 <a href="images/HorarioJardin.png"
+                    target="_blank">
+                    <img src="images/HorarioPrejardin.png" alt="Cronograma " class="img-fluid">
+                </a>
+            </div> 
+        </div>
+      </div>
+    </div> 
+    <div class="container mt-3 mb-3">
+        <div class="col 12 mt-3">
+          <p class="h4 text-center color-blue mb-3 bg-color-blue-light text-white p-2">HORARIO PARVULOS </p>
+        </div>
+      </div>  
+    <div class="row">
+      <div class="container">
+        <div class="col-12 ml-0">
+            <div class="horarios">
+                <a href="images/HorarioParvulos.png"
                     target="_blank">
                     <img src="images/HorarioJardin.png" alt="Cronograma " class="img-fluid">
                 </a>
