@@ -75,17 +75,17 @@
         </div>
         <div class="col-12">
             <div class="row">
-                <div class="col-12 col-md-7 pr-3 pr-md-0">
+                <div class="col-12 col-md-7 col-lg-8 pr-3 pr-md-0">
                     <a id="" href="index.php" class="logo">
                         <img src="images/globos jardin.jpg" alt="Imagen invitación a admisiones y contacto"
                             class="w-100"></a>
                 </div>
-                <div class="col-12 col-md-5 pl-3 pl-md-0">
+                <div class="col-12 col-md-5 col-lg-4 pl-3 pl-md-0">
                     <div class="bg-color-blue-light p-3 h-100">
-                        <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
-                            doloribus natus nihil aut magnam id beatae pariatur exercitationem consequuntur sunt aperiam
-                            facilis molestiae ipsa, magni.</p>
-                        <button class="btn btn-outline-light">Más información</button>
+                        <p class="text-white h4 mb-4">Admisiones</p>
+                        <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
+                            doloribus natus nihil aut magnam id beatae pariatur.</p> 
+                        <button class="btn btn-outline-light  mb-4">Más información</button>
                     </div>
                 </div>
             </div>
@@ -96,11 +96,12 @@
 
 <!-- ======= Más sobre nosotros  ======= -->
 <!--Div important-->
-<div class="container">
+<div class="container mt-5">
+    <p class="h2 text-center color-blue bg-color-blue-light text-white p-2">INSCRIPCIONES</p>
     <div class="row mt-2">
         <div class="col-12 col-md-7">
             <div class="bg-color-blue-light p-2 w-100 h-100 d-flex justify-content-center align-items-center">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/BD4qBctPHzU" frameborder="0"
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BD4qBctPHzU" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 <a href="" class="" data-vbtype="video" data-autoplay="true"></a>
@@ -263,8 +264,8 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                 <div class="form-row">
                     <div class="col-12 col-lg-6 form-group ">
-                        <input type="text" name="name" class="form-control" id="name"
-                            placeholder="Nombres" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombres"
+                            data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                     </div>
                     <div class="col-12 col-lg-6 form-group">
                         <input type="email" class="form-control" name="email" id="email"
@@ -272,9 +273,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="subject" id="subject"
-                        placeholder="Asunto" data-rule="minlen:4"
-                        data-msg="Please enter at least 15 chars of subject" />
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto"
+                        data-rule="minlen:4" data-msg="Please enter at least 15 chars of subject" />
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" name="message" rows="4" data-rule="required"

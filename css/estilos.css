@@ -16,10 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
-p {
-  text-align: justify;
-}
-
 .color-blue {
   color: #007bff !important;
 }
@@ -30,6 +26,14 @@ p {
 
 .bg-color-blue-light {
   background-color: #007bff !important;
+}
+
+hr {
+  border-top: 1px solid #007bff !important;
+}
+
+.manual hr {
+  border-top: 1px solid #000 !important;
 }
 /*--------------------------------------------------------------
 # Footer indexxx
