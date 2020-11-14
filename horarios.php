@@ -1,31 +1,48 @@
 <?php include ('header.php'); ?>
-    <section>
-      <div class="container mb-3 ">
-         <div class="border-content pt-2 pb-2">
-          <h3 class="text-center">CRONOGRAMA</h3>
+   
+    <section> <!--===== Section Cronograma=====-->
+    <div class="container mt-3 mb-3 ">
+         <div class="col-12 pt-2 pb-2">
+          <p class="h2 text-center mb-3 bg-color-blue-light text-white p-2">CRONOGRAMA</p>
           <p class="italic text-center"></p>
+         </div>
+    <div class="row">
+      <div class="container">
+        <div class="col-12 ml-0">
+            <div class="horarios">
+                <a href="images/HorarioJardin.png"
+                    target="_blank">
+                    <img src="images/HorarioJardin.png" alt="Cronograma " class="img-fluid">
+                </a>
+            </div>
         </div>
-        <div class="row mt-3 border-content-blue ">
-              <div class="col-xl-10 col-lg-12 video-box d-flex justify-content-md-start  align-items-center ">
-                <img width="930" height="500" src="images/fondo mader.jpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></img>
-                <a href="" class="" data-vbtype="video" data-autoplay="true"></a>
-              </div>
-        </div>
-    </section>
+      </div>
+    </div> 
+    </section> <!--=====Final Section Cronograma=====-->
 
-    <section>
-      <div class="container mb-3">
-         <div class="border-content pt-2 pb-2">
-          <h3 class="text-center">HORARIO</h3>
-          <p class="italic text-center"></p>
+    <section> <!--====Section Horarios=====-->
+      <div class="container mt-3 mb-3 ">
+        <div class="col-12">
+           <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">HORARIOS</p>
+           <p class="italic text-center"></p>
         </div>
-        <div class="row mt-3 border-content-blue ">
-              <div class="col-10 col-xl-10 col-lg-6 video-box d-flex justify-content-md-start align-items-center ">
-                <img width="930" height="500" src="images/fondo mader.jpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></img>
-                <a href="" class="" data-vbtype="video" data-autoplay="true"></a>
-              </div>
+        <div class="col 12 mt-3">
+          <p class="h4 text-center color-blue mb-3 bg-color-blue-light text-white p-2">HORARIO PREJARDIN </p>
         </div>
-    </section>
+      </div>  
+    <div class="row">
+      <div class="container">
+        <div class="col-12 ml-0">
+            <div class="horarios">
+                <a href="images/HorarioJardin.png"
+                    target="_blank">
+                    <img src="images/HorarioJardin.png" alt="Cronograma " class="img-fluid">
+                </a>
+            </div> 
+        </div>
+      </div>
+    </div> 
+    </section> <!--=====Final Section Horarios=====-->
     
 <!--Footer -->
 <?php include ('footer.php'); ?>

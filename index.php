@@ -111,7 +111,7 @@
                 <div class="row">
                     <div class="col-12 d-flex align-items-stretch">
                         <div class="bg-color-blue-light p-2">
-                            <a id="" href="index.php" class="logo"><img src="images/globos jardin.jpg"
+                            <a id="" href="index.php" class="logo"><img src="images/matriculas abiertas.jpg"
                                     alt="Imagen invitación a admisiones y contacto" class="img-fluid"></a>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
         </div>
     </div>
 </div>
-
+<!-- =======Final Seccion Galeria======= -->
 <!-- =======Seccion Contactanos======= -->
 <div class="container">
     <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Ubicación</p>

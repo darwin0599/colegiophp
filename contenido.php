@@ -68,9 +68,6 @@
 
                 </ul>
                 </div>
-              <div class="col-lg-4 text-center order-1 order-lg-2">
-                <img src="images/bandera.png" alt="" class="img-fluid">
-              </div>
             </div>
           </div>
     

@@ -33,7 +33,7 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="contenido.php">Observador Virtual</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="docentes.php">Docentes y Administrativos
                                 </a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="cronograma.php">Horarios</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="horarios.php">Horarios</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="contactenos.php">Contactanos</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio Sesion</a></li>
                         </ul>
