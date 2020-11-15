@@ -1,11 +1,3 @@
-<?php
-$conectar= mysqli_connect('127.0.0.1:3306', 'root', '',  'my_little_world');
-if($conectar->connect_errno){
-  echo "Fallo al conectar:".$conectar->connect_errno;
-  header('Location: formulario.php?error=1');
-}else{echo"prendio perro";}
-?>
-
 <?php include ('header.php'); ?>
 <div class="container">
     <div class="row">
