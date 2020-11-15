@@ -4,9 +4,6 @@
     $ret=mysqli_query($con,"SELECT * FROM informations");
     $num=$ret->fetch_assoc();
 ?>
-<pre>
- <?php print_r($num['description']); ?>
-</pre>
 <!-- =======Seccion Contactanos======= -->
 <section id="contact" class="contact">
     <!-- =======Seccion Contactanos======= -->
