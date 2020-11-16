@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-12 col-md-7 col-lg-8 pr-3 pr-md-0">
                     <a id="" href="index.php" class="logo">
-                        <img src="images/globos jardin.jpg" alt="Imagen invitación a admisiones y contacto"
+                        <img src="images/globos_jardin.jpg" alt="Imagen invitación a admisiones y contacto"
                             class="w-100"></a>
                 </div>
                 <div class="col-12 col-md-5 col-lg-4 pl-3 pl-md-0">

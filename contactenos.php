@@ -2,8 +2,8 @@
     include ('header.php'); 
     include ("config.php");
     $ret=mysqli_query($con,"SELECT * FROM informations");
-    $num=$ret->fetch_assoc();
-?>
+    $num=$ret->fetch_assoc(); >  
+?> <!-- ========== -->
 <!-- =======Seccion Contactanos======= -->
 <section id="contact" class="contact">
     <!-- =======Seccion Contactanos======= -->
