@@ -1,4 +1,13 @@
-<?php include ('header.php'); ?>
+<?php 
+    include ('header.php'); 
+    include ("config.php");
+    $ret=mysqli_query($con,"SELECT * FROM banners WHERE section='slider_index' ORDER BY position ASC");
+    $admisiones_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='admisiones_index' ORDER BY position ASC LIMIT 1");
+    $inscripciones_video_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='inscripciones_index' AND type='video' ORDER BY position ASC LIMIT 1");
+    $inscripciones_image_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='inscripciones_index' AND type='image' ORDER BY position ASC LIMIT 2");
+    $inscripciones_video = $inscripciones_video_ret->fetch_assoc();
+    $admisiones = $admisiones_ret->fetch_assoc();
+?>
 
 <!-- ======= Section Images ======= -->
 
@@ -28,33 +37,21 @@
 <div class="container py-3">
     <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Imagenes</p>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/biblioteca.jpg" class="d-block img-carousel" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/adaptacion camping.jpg" class="d-block img-carousel" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/ubicacion.jpg" class="d-block img-carousel" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
+            <?php
+                $i = 0;
+                while($row = mysqli_fetch_assoc($ret)) {
+                    $i++;
+                    $clase = ($i==1) ?'active':'';
+                    echo '<div class="carousel-item '.$clase.'">
+                            <img src="'.$row['url_media'].'" class="d-block img-carousel" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>'.$row['title'].'</h5>
+                                <p>'.$row['description'].'</p>
+                            </div>
+                        </div>';
+                }
+            ?>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -77,15 +74,14 @@
             <div class="row">
                 <div class="col-12 col-md-7 col-lg-8 pr-3 pr-md-0">
                     <a id="" href="index.php" class="logo">
-                        <img src="images/globos_jardin.jpg" alt="Imagen invitación a admisiones y contacto"
-                            class="w-100"></a>
+                        <img src="<?php echo $admisiones['url_media'] ?>" alt="<?php echo $admisiones['title'] ?>"
+                            class="w-100 h-100"></a>
                 </div>
                 <div class="col-12 col-md-5 col-lg-4 pl-3 pl-md-0">
                     <div class="bg-color-blue-light p-3 h-100">
-                        <p class="text-white h4 mb-4">Admisiones</p>
-                        <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
-                            doloribus natus nihil aut magnam id beatae pariatur.</p> 
-                        <button class="btn btn-outline-light  mb-4">Más información</button>
+                        <p class="text-white h4 mb-4"><?php echo $admisiones['title'] ?></p>
+                        <p class="text-white mb-4"><?php echo $admisiones['description'] ?></p> 
+                        <a href="contactenos.php" class="btn btn-outline-light  mb-4">Más información</a>
                     </div>
                 </div>
             </div>
@@ -101,28 +97,29 @@
     <div class="row mt-2">
         <div class="col-12 col-md-7">
             <div class="bg-color-blue-light p-2 w-100 h-100 d-flex justify-content-center align-items-center">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BD4qBctPHzU" frameborder="0"
+                <iframe width="100%" height="100%" src="<?php echo $inscripciones_video['url_media'] ?>" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
-                <a href="" class="" data-vbtype="video" data-autoplay="true"></a>
             </div>
         </div>
         <div class="col-12 col-md-5 d-flex mt-2 mt-md-0">
             <div class="d-flex justify-content-center">
                 <div class="row">
-                    <div class="col-12 d-flex align-items-stretch">
-                        <div class="bg-color-blue-light p-2">
-                            <a id="" href="index.php" class="logo"><img src="images/matriculas abiertas.jpg"
-                                    alt="Imagen invitación a admisiones y contacto" class="img-fluid"></a>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex align-items-stretch mt-1">
-                        <div class="bg-color-blue-light p-2">
-                            <a id="" href="index.php" class="logo"><img src="images/globos jardin.jpg"
-                                    alt="Imagen invitación a admisiones y contacto" class="img-fluid"></a>
-                        </div>
-                    </div>
-
+                    <?php
+                        $i = 0;
+                        while($row = mysqli_fetch_assoc($inscripciones_image_ret)) {
+                            $i++;
+                            $clase = ($i==1) ?'mb-1':'';
+                            echo '<div class="col-12 d-flex align-items-stretch '.$clase.'">
+                                    <div class="bg-color-blue-light p-2">
+                                        <a id="" href="contactenos.php" class="logo">
+                                            <img class="w-100 h-100" src="'.$row['url_media'].'"
+                                                alt="'.$row['title'].'">
+                                        </a>
+                                    </div>
+                                </div>';
+                        }
+                    ?>
                 </div>
             </div>
         </div><!-- ===== Final del contenido inicial ======= -->
