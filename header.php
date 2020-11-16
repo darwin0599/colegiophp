@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,7 +26,7 @@
             <ul class="d-inline">
                 <li>
                     <a href="horarios.php" class="cronograma d-inline-flex align-items-center">
-                        <i class="far fa-calendar-alt width-icons"></i> 
+                        <i class="far fa-calendar-alt width-icons"></i>
                         <p class="m-0 ml-3">Cronograma</p>
                     </a>
                 </li>
@@ -98,7 +98,8 @@
         <!--Navbar, menú-->
         <nav class="navbar navbar-expand-md navbar-dark bg-red mt-1">
             <a class="navbar-brand d-block d-md-none" href="#">Mi pequeño mundo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="container" data-aos="fade-down">
