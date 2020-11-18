@@ -1,6 +1,7 @@
 <?php include ('header.php'); ?>
 <!--Div important-->
 <div class="container mt-5">
+<hr>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="content p-2">
@@ -39,6 +40,7 @@
             </div><!-- ===== Final del contenido inicial ======= -->
         </div>
     </div>
+    <hr>
 </div>
 
 <!-- ======= Mas sobre nosotros  ======= -->

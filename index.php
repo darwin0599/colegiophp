@@ -5,6 +5,7 @@
     $admisiones_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='admisiones_index' ORDER BY position ASC LIMIT 1");
     $inscripciones_video_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='inscripciones_index' AND type='video' ORDER BY position ASC LIMIT 1");
     $inscripciones_image_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='inscripciones_index' AND type='image' ORDER BY position ASC LIMIT 2");
+    $galeria=mysqli_query($con,"SELECT * FROM banners WHERE section='galeria' ");
     $inscripciones_video = $inscripciones_video_ret->fetch_assoc();
     $admisiones = $admisiones_ret->fetch_assoc();
 ?>
@@ -64,8 +65,8 @@
     </div>
 </div>
 
-<!-- ======= Participación  ======= -->
-<div class="container ">
+<!-- ======= Participación Admisiones  ======= -->
+<div class="container mt-4">
     <div class="row">
         <div class="col-12">
             <p class="h2 text-center color-blue bg-color-blue-light text-white p-2">Proceso de admisiones</p>
@@ -80,7 +81,7 @@
                 <div class="col-12 col-md-5 col-lg-4 pl-3 pl-md-0">
                     <div class="bg-color-blue-light p-3 h-100">
                         <p class="text-white h4 mb-4"><?php echo $admisiones['title'] ?></p>
-                        <p class="text-white mb-4"><?php echo $admisiones['description'] ?></p> 
+                        <p class="text-white mb-4"><?php echo $admisiones['description'] ?></p>
                         <a href="contactenos.php" class="btn btn-outline-light  mb-4">Más información</a>
                     </div>
                 </div>
@@ -88,7 +89,7 @@
         </div>
     </div>
 </div>
-
+<!-- ======= Final Admisiones  ======= -->
 
 <!-- ======= Más sobre nosotros  ======= -->
 <!--Div important-->
@@ -126,73 +127,25 @@
     </div>
 </div>
 <!--Ens div important-->
+
 <!--============= Galeria Imagenes ============== -->
 <div class="container mt-5">
     <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Momentos de Mi Pequeño Mundo</p>
     <hr class="mt-2 mb-5">
 
     <div class="row text-center text-lg-left">
-
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="images/biblioteca.jpg" alt="">
-            </a>
-        </div>
+        <?php
+            $i = 0;
+            while($row = mysqli_fetch_assoc($galeria)) {
+                $i++;
+                $clase = ($i==1) ?'mb-1':'';
+                echo ' <div class="col-lg-3 col-md-4 col-12 '.$clase.'">
+                <a href="'.$row['url_media'].'" class="d-block mb-4 h-100">
+                    <img width="220px" height="220px" class="" src="'.$row['url_media'].'" alt="'.$row['title'].'">
+                </a>
+            </div>';
+            }
+        ?>
     </div>
 </div>
 <!-- =======Final Seccion Galeria======= -->
@@ -202,8 +155,7 @@
     <div class="row">
         <div class="col-12 ml-0">
             <div class="gallery-item">
-                <a href="https://www.google.com/maps/place/Barbosa,+Santander/@5.9343848,-73.6244343,15z/data=!3m1!4b1!4m5!3m4!1s0x8e41e5b0c45020ab:0x9053c0246944f9a2!8m2!3d5.934363!4d-73.615679?hl=es"
-                    target="_blank">
+                <a href="<?php echo $num['url_image']; ?>" target="_blank">
                     <img src="images/barbosaubicacion.jpg" alt="Ubicación Barbosa Santander " class="img-fluid">
                 </a>
             </div>
