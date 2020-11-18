@@ -64,6 +64,7 @@
         </a>
     </div>
 </div>
+<!-- ======= FINAL Imagenes presentación  ======= -->
 
 <!-- ======= Participación Admisiones  ======= -->
 <div class="container mt-4">
@@ -74,7 +75,7 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-12 col-md-7 col-lg-8 pr-3 pr-md-0">
-                    <a id="" href="index.php" class="logo">
+                    <a id="" href="admisiones.php" class="logo">
                         <img src="<?php echo $admisiones['url_media'] ?>" alt="<?php echo $admisiones['title'] ?>"
                             class="w-100 h-100"></a>
                 </div>
@@ -82,7 +83,7 @@
                     <div class="bg-color-blue-light p-3 h-100">
                         <p class="text-white h4 mb-4"><?php echo $admisiones['title'] ?></p>
                         <p class="text-white mb-4"><?php echo $admisiones['description'] ?></p>
-                        <a href="contactenos.php" class="btn btn-outline-light  mb-4">Más información</a>
+                        <a href="admisiones.php" class="btn btn-outline-light  mb-4">Más información</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +93,6 @@
 <!-- ======= Final Admisiones  ======= -->
 
 <!-- ======= Más sobre nosotros  ======= -->
-<!--Div important-->
 <div class="container mt-5">
     <p class="h2 text-center color-blue bg-color-blue-light text-white p-2">INSCRIPCIONES</p>
     <div class="row mt-2">
@@ -113,7 +113,7 @@
                             $clase = ($i==1) ?'mb-1':'';
                             echo '<div class="col-12 d-flex align-items-stretch '.$clase.'">
                                     <div class="bg-color-blue-light p-2">
-                                        <a id="" href="contactenos.php" class="logo">
+                                        <a href="admisiones.php" class="logo">
                                             <img class="w-100 h-100" src="'.$row['url_media'].'"
                                                 alt="'.$row['title'].'">
                                         </a>
@@ -126,7 +126,7 @@
         </div><!-- ===== Final del contenido inicial ======= -->
     </div>
 </div>
-<!--Ens div important-->
+<!--important-->
 
 <!--============= Galeria Imagenes ============== -->
 <div class="container mt-5">
@@ -149,6 +149,7 @@
     </div>
 </div>
 <!-- =======Final Seccion Galeria======= -->
+
 <!-- =======Seccion Contactanos======= -->
 <div class="container">
     <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Ubicación</p>
@@ -239,4 +240,5 @@
     </div>
 </div>
 <!-- ====Final Sección De Contacto==== -->
+<!-- ====FOOTER==== -->
 <?php include ('footer.php'); ?>

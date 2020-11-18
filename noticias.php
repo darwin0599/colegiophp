@@ -1,17 +1,16 @@
 <?php 
     include ('header.php'); 
     include ("config.php");
-    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='news'");
+    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='admisiones'");
+    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='inscripciones'");
 ?>
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <p class="h2 text-center color-blue bg-color-blue-light text-white mt-5 p-2">Noticias</p>
+            <p class="h2 text-center color-blue bg-color-blue-light text-white mt-5 p-2">ADMISIONES</p>
         </div>
         <div class="col-12">
-            <p class="text-center p-2">Magnamñ dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid
-                fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+            <p class="text-center p-2">En esta seccion encunetra la información para el proceso de admisione en el centro educativo mi pequeño mundo </p>
         </div>
     </div>
     <?php
@@ -55,6 +54,8 @@
         }
     ?>
 </div>
-<!------ Final Sección Noticias ------->
+<!------ Final Sección Admisiones ------->
+
+
 <!--Footer -->
 <?php include ('footer.php'); ?>
