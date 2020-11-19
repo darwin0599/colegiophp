@@ -1,37 +1,16 @@
 <?php 
     include ("config.php");
+    include ("header_forms.php");
     $ret=mysqli_query($con,"SELECT * FROM banners WHERE id=".$_GET["id"]);
     $num = $ret->fetch_assoc();
 ?>
 <body>
     <section class="container-fluid">
         <div class="row ">
-            <div class="col-2 bg-warning">
-                <nav class="bg-warning w-100">
-                    <h5>Mi pequeño mundo</h5>
-                    <hr class="my-2">
-                    <ul class="style-none">
-                        <li class="py-2">
-                            <a href="form_list_banner.php"><i class="fas fa-cog"></i> Imagenes y videos</a>
-                        </li>
-                        <li class="py-">
-                            <a href="form_list_news.php"><i class="fas fa-cog"></i> Noticias y Eventos </a>
-                        </li>
-                        <li class="py-2">
-                            <a href="form_list_admissions.php"><i class="fas fa-cog"></i> Admisiones y Matriculas </a>
-                        </li>
-                        <li class="py-2">
-                            <a href="form_list_honors.php"><i class="fas fa-cog"></i> Cuadro Honores</a>
-                        </li>
-                        <li class="py-2">
-                            <a href="form_list_teacher.php"><i class="fas fa-cog"></i> Docentes</a>
-                        </li>
-                        <li class="py-2">
-                            <a href="form_list_info.php"><i class="fas fa-cog"></i> Información Contacto</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <div class="col-3 bg-danger">
+                <nav class="bg-danger w-100">
+                <?php include ("menu_forms.php"); ?>
+            </div>        
             <div class="col-8 offset-1">
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">

@@ -1,26 +1,33 @@
 <?php 
    
     include ("config.php");
+    include ('header_forms.php'); 
     $ret=mysqli_query($con,"SELECT * FROM banners");
 ?>
+
 <body>
- <Section>
-            <div class="col-8 offset-1">
-                <div class="container my-4">
-                    <div class="d-flex justify-content-between bg-warning ">
-                        <h2 class="d-flex m-0 align-items-center">Listado de categorias</h2>
+    <Section class="container-fluid">
+        <div class="row ">
+            <div class="col-3 bg-danger">
+                <?php include ("menu_forms.php"); ?>
+            </div>
+            <div class="col-8 center-block">
+                <div class="container ">
+                <div class="d-flex justify-content-between bg-warning form-header">
+                        <h2 class="d-flex m-0 align-items-center text-center">ADMINISTRADOR DE CONTENIDO</h2>
                         <a id="show_add_category" href="form_creator_banner.php"
                             class="btn bg-transparent d-flex align-items-center"><i class="fa fa-plus"></i></a>
                     </div>
+
                     <form class="form group">
                         <div class="row">
                             <div class="col-12">
-                                Lista de Banners, Imagenes, Videos.  
+                                Lista de Banners, Imagenes, Videos.
                             </div>
                         </div>
                     </form>
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-12">
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
@@ -59,17 +66,18 @@
                     </div>
                 </div>
             </div>
-    </section>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
