@@ -1,6 +1,5 @@
 <?php 
    
-    include ('header_forms.php'); 
     include ("config.php");
     $ret=mysqli_query($con,"SELECT * FROM banners");
 ?>
