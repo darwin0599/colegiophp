@@ -1,11 +1,12 @@
 <?php include ('header.php'); ?>
-<!--Div important-->
+
+<!--Información Importante-->
 <div class="container mt-5">
 <hr>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="content p-2">
-                <h4 class="color-blue">¿Propuesta educativa?</h3>
+                <h4 class="color-blue">¿Propuesta Educativa?</h3>
                     <p class="m-0">
                         Es una propuesta educativa innovadora que pretende crear un espacio pedagógico nuevo a los niños
                         de educación inicial del municipio de Barbosa y aledaños a través de la pedagogía de la ternura,
@@ -37,7 +38,7 @@
                             habilidades lingüisticas , cognitivas, socio afectivas, y psicomotoras.</p>
                     </div>
                 </div>
-            </div><!-- ===== Final del contenido inicial ======= -->
+            </div><!-- ===== Final del contenido importante ======= -->
         </div>
     </div>
     <hr>
@@ -102,7 +103,7 @@
 <!-- ======= Seccion de informacion ======= -->
 <div class="container">
 
-    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">INSTITUCIÓN EDUCATIVA</p>
+    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">INFORMACIÓN INSTITUCIÓNAL</p>
 
     <div class="row">
         <div class="col-12">
@@ -141,6 +142,9 @@
                         honor y lealtad.
                     </p>
                 </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                            <img src="images/bandera.png" alt="" class="img-fluid">
+                        </div>
                 <div class="tab-pane fade p-3" id="tab-2" role="tabpanel" aria-labelledby="tab-2-tab">
                     <h3 class="color-blue">Escudo</h3>
                     <hr>

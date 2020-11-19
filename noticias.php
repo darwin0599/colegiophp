@@ -1,16 +1,16 @@
 <?php 
     include ('header.php'); 
     include ("config.php");
-    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='admisiones'");
-    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='inscripciones'");
+    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='news'");
+  
 ?>
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <p class="h2 text-center color-blue bg-color-blue-light text-white mt-5 p-2">ADMISIONES</p>
+            <p class="h2 text-center color-blue bg-color-blue-light text-white mt-5 p-2">NOTICIAS</p>
         </div>
         <div class="col-12">
-            <p class="text-center p-2">En esta seccion encunetra la información para el proceso de admisione en el centro educativo mi pequeño mundo </p>
+            <p class="text-center p-2">En esta seccion encuentra la información para las noticias en el centro educativo mi pequeño mundo </p>
         </div>
     </div>
     <?php
@@ -47,7 +47,6 @@
                                         <img width="100%" height="350" src="'.$row['url_media'].'"></img>
                                     </div>
                                 </div>
-                                <hr>
                             </div>';
             }
             echo $html_code;

@@ -2,9 +2,9 @@
     include ('header.php'); 
     include ("config.php");
     $ret=mysqli_query($con,"SELECT * FROM banners WHERE section='slider_index' ORDER BY position ASC");
-    $admisiones_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='admisiones_index' ORDER BY position ASC LIMIT 1");
-    $inscripciones_video_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='inscripciones_index' AND type='video' ORDER BY position ASC LIMIT 1");
-    $inscripciones_image_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='inscripciones_index' AND type='image' ORDER BY position ASC LIMIT 2");
+    $admisiones_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='admisiones' ORDER BY position ASC LIMIT 1");
+    $inscripciones_video_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='matriculas' AND type='video' ORDER BY position ASC LIMIT 1");
+    $inscripciones_image_ret = mysqli_query($con,"SELECT * FROM banners WHERE section='matriculas' AND type='image' ORDER BY position ASC LIMIT 2");
     $galeria=mysqli_query($con,"SELECT * FROM banners WHERE section='galeria' ");
     $inscripciones_video = $inscripciones_video_ret->fetch_assoc();
     $admisiones = $admisiones_ret->fetch_assoc();
@@ -36,7 +36,7 @@
 
 <!-- ======= Imagenes presentación  ======= -->
 <div class="container py-3">
-    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Imagenes</p>
+    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">IMAGENES</p>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <?php
@@ -70,7 +70,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-12">
-            <p class="h2 text-center color-blue bg-color-blue-light text-white p-2">Proceso de admisiones</p>
+            <p class="h2 text-center color-blue bg-color-blue-light text-white p-2">PROCESO DE ADMISIONES</p>
         </div>
         <div class="col-12">
             <div class="row">
@@ -130,7 +130,7 @@
 
 <!--============= Galeria Imagenes ============== -->
 <div class="container mt-5">
-    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Momentos de Mi Pequeño Mundo</p>
+    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">MOMENTOS MI PEQUEÑO MUNDO</p>
     <hr class="mt-2 mb-5">
 
     <div class="row text-center text-lg-left">
@@ -152,7 +152,7 @@
 
 <!-- =======Seccion Contactanos======= -->
 <div class="container">
-    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Ubicación</p>
+    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">UBICACIÓN</p>
     <div class="row">
         <div class="col-12 ml-0">
             <div class="gallery-item">
@@ -164,7 +164,7 @@
     </div>
 </div>
 <div class="container mt-5">
-    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Contactános</p>
+    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">CONTACTÁNOS</p>
     <div class="section-title">
         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
             consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui .impedit suscipit alias ea. Quia

@@ -34,7 +34,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mb-5 text-center">
             <img width="200px" height="200px" src="images/profe johana.jpeg" class="rounded-circle"></img>
-            <h5 class="color-blue mt-2 text-center">Alexandra Ibarra Aguirre</h5>
+            <h5 class="color-blue mt-2 text-center">ALEXANDRA IBARRA AGUIRRE</h5>
         </div>
         <div class="col-12 col-md-6 col-lg-3 mb-5">
             <div class="row">
@@ -60,7 +60,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mb-5 text-center">
             <img width="200px" height="200px" src="images/trectora.jpeg" class="rounded-circle"></img>
-            <h5 class="color-blue mt-2 text-center">Cindy Nayive Diaz Quevedo</h5>
+            <h5 class="color-blue mt-2 text-center">CINDY NAYIVE DIAZ QUEVEDO</h5>
         </div>
         <div class="col-12 col-md-6 col-lg-3 mb-5">
             <div class="row">

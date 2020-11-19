@@ -6,7 +6,7 @@
 
 <!--============= Galeria Imagenes ============== -->
 <div class="container mt-5">
-    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Momentos de Mi Pequeño Mundo</p>
+    <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">MOMENTOS MI PEQUEÑO MUNDO</p>
     <hr class="mt-2 mb-5">
 
     <div class="row text-center text-lg-left">

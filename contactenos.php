@@ -3,12 +3,14 @@
     include ("config.php");
     $ret=mysqli_query($con,"SELECT * FROM informations");
     $num=$ret->fetch_assoc();
-?> <!-- ========== -->
+?> <!-- ====FINAL HEADER====== -->
+
 <!-- =======Seccion Contactanos======= -->
 <section id="contact" class="contact">
     <!-- =======Seccion Contactanos======= -->
     <div class="container mt-5">
-        <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Ubicación</p>
+        <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">UBICACIÓN</p>
+        <hr>
         <div class="row">
             <div class="col-12 ml-0">
                 <div class="gallery-item">
@@ -21,7 +23,7 @@
         </div>
     </div>
     <div class="container mt-5">
-        <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">Contactános</p>
+        <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">CONTACTÁNOS</p>
         <div class="section-title">
             <p><?php echo $num['description']; ?></p>
         </div>
