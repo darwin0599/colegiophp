@@ -86,8 +86,9 @@
                                                 <td>'.$row['title'].'</td>
                                                 <td>'.$row['section'].'</td>
                                                 <td class="text-center">
-                                                    <a href="form_edit_banner.php" class="btn">
-                                                        <i class="fa fa-edit"></i>
+                                                    <a href="form_edit_banner.php?id='.$row['id'].'" class="btn">
+                                                        <i href="" class="fa fa-edit"></i>
+        
                                                     </a>
                                                 </td>
                                             </tr>';

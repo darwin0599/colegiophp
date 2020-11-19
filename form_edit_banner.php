@@ -2,7 +2,9 @@
 <html lang="en">
 <?php 
     include ("config.php");
-    $ret=mysqli_query($con,"SELECT * FROM banners");
+    $ret=mysqli_query($con,"SELECT * FROM banners WHERE id=".$_GET["id"]);
+    $num = $ret->fetch_assoc();
+
 ?>
 
 <head>
@@ -56,14 +58,42 @@
                                 <hr>
                             </div>
                             <div class="row">
+                                <div class="col-12 col-lg-6 form-group ">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
+                                        data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+                                        value="<?php echo $num["url_media"]; ?>" />
+                                </div>
                                 <div class="form-group col-md-12">
-                                    <input name="name" type="text" class="form-control"
-                                        placeholder="Nombre de la categoría">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
+                                        data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+                                        value="<?php echo $num["title"]; ?>" />
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea class="form-control" id="validationTextarea" placeholder="Descripción"
+                                        required><?php echo $num["description"]; ?></textarea>
+
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Posición"
+                                        data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+                                        value="" />
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="exampleFormControlSelect1">Sectión</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>slider_index</option>
+                                        <option>admisiones</option>
+                                        <option>matriculas</option>
+                                        <option>galeria</option>
+                                        <option>cronograma</option>
+                                        <option>horario_jardin</option>
+                                        <option>horario_prejardin</option>
+                                        <option>horario_parvulos</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-group text-center">
-                                <a href="form_list_banner.php" class="btn btn-outline-warning col-md-4"
-                                    type="submit">Editar</a>
+                            <div class="form-group text-center bg-warning">
+                                <a href="form_list_banner.php" class="btn btn-outline col-md-4" type="submit">Editar</a>
                             </div>
                         </form>
                     </div>
