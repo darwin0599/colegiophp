@@ -2,8 +2,8 @@
 <html lang="en">
 <?php 
     include ("config.php");
-    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='news'");
-    $ret=mysqli_query($con,"SELECT * FROM news WHERE section='events'");
+    $ret=mysqli_query($con,"SELECT * FROM informations");
+    $num=$ret->fetch_assoc();
 ?>
 
 <head>
@@ -27,22 +27,22 @@
                     <hr class="my-2">
                     <ul class="style-none">
                         <li class="py-2">
-                            <a href="form_list_banner.php"><i class="fas fa-cog"></i> Banners, imagenes, videos</a>
+                            <a href="form_list_banner.php"><i class="fas fa-cog"></i> Imagenes y videos</a>
+                        </li>
+                        <li class="py-">
+                            <a href="form_list_news.php"><i class="fas fa-cog"></i> Noticias y Eventos </a>
                         </li>
                         <li class="py-2">
-                            <a href="form_list_news.php"><i class="fas fa-cog"></i> Noticias, Eventos </a>
+                            <a href="form_list_admissions.php"><i class="fas fa-cog"></i> Admisiones y Matriculas </a>
                         </li>
                         <li class="py-2">
-                            <a href="form_list_admissions.php"><i class="fas fa-cog"></i> Admisiones, Inscripciones </a>
+                            <a href="form_list_honors.php"><i class="fas fa-cog"></i> Cuadro Honores</a>
                         </li>
                         <li class="py-2">
-                            <a href="#"><i class="fas fa-cog"></i> Cuadro Honores</a>
+                            <a href="form_list_teacher.php"><i class="fas fa-cog"></i> Docentes</a>
                         </li>
                         <li class="py-2">
-                            <a href="#"><i class="fas fa-cog"></i> Docentes</a>
-                        </li>
-                        <li class="py-2">
-                            <a href="#"><i class="fas fa-cog"></i> Informacion Contacto</a>
+                            <a href="form_list_info.php"><i class="fas fa-cog"></i> Información Contacto</a>
                         </li>
                     </ul>
                 </nav>
@@ -57,7 +57,7 @@
                     <form class="form group">
                         <div class="row">
                             <div class="col-12">
-                                Lista de Noticias y Eventos.  
+                                Lista de Banners, Imagenes, Videos.
                             </div>
                         </div>
                     </form>
@@ -66,36 +66,39 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">id</th>
-                                        <th scope="col">Imagen</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Descripción</th>
-                                        <th scope="col">Sección</th>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Descripcion</th>
+                                        <th scope="col">Ubicación</th>
+                                        <th scope="col">Dirección</th>
+                                        <th scope="col">Email-1</th>
+                                        <th scope="col">Email-2</th>
+                                        <th scope="col">Tel-1</th>
+                                        <th scope="col">Tel-2</th>
+                                        <th scope="col">Image</th>
                                         <th scope="col">Opciones</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                            $i = 0;
-                                            while($row = mysqli_fetch_assoc($ret)) {
-                                                $i++;
-                                                echo ' <tr>
-                                                <th>'.$row['id'].'</th>
-                                                <td><a href="'.$row['url_media'].'" class="logo">
-                                                <img src="'.$row['url_media'].'" alt="'.$row['title'].'"
-                                                    class="img-fluid"></a></td>
-                                                <td>'.$row['title'].'</td>
-                                                <td>'.$row['description'].'</td>
-                                                <td>'.$row['section'].'</td>
-                                                <td class="text-center">
-                                                    <a href="form_edit_banner.php" class="btn">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-                                                </td>
-                                                
-                                            </tr>';
-                                            }
-                                        ?>
+                                    <tr>
+                                        <th><?php echo $num['id']; ?></th>
+                                        <td><?php echo $num['description']; ?></td>
+                                        <td><?php echo $num['location']; ?></td>
+                                        <td><?php echo $num['address']; ?></td>
+                                        <td><?php echo $num['email_one']; ?></td>
+                                        <td><?php echo $num['email_two']; ?></td>
+                                        <td><?php echo $num['phone_one']; ?></td>
+                                        <td><?php echo $num['phone_two']; ?></td>
+                                        <td><a href="<?php echo $num['image']; ?>" class="logo">
+                                                <img src="<?php echo $num['image']; ?>" alt="<?php echo $num['url_image']; ?>"
+                                                    class="image_form"></a></td>
+                                        <td class="text-center">
+                                            <a href="form_edit_banner.php" class="btn">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
