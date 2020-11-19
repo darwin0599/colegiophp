@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Mi Pequeño Mundo</title>
+    <style media="screen">
+            #uploadForm,
+            #imagePreview {
+                width: 720px;
+            }
+
+            img {
+                max-width: 5rem;
+                height: auto;
+            }
+            </style>
 </head>
 
 
