@@ -2,7 +2,7 @@
     include ('header_forms.php'); ?>
     
 <nav class="bg-danger w-100">
-                    <h5 class="text-center">Mi Pequeño Mundo</h5>
+                    <h5 class="text-center my-3 ">Mi Pequeño Mundo</h5>
                     <hr class="my-2">
                     <ul class="style-none">
                         <li class="py-2">

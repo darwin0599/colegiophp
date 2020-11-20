@@ -27,7 +27,7 @@
                                 <hr>
                             </div>
                             <div class="row">
-                                <div class="col-12 col-md-12  ">
+                                <div class="col-12 col-md-12 my-4 ">
                                     <input type="file" name="imagen" id="imagen"
                                     />
                                     <input type="Submit" />
