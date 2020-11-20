@@ -6,20 +6,15 @@
 ?>
 
 <body>
-
     <section class="container-fluid">
         <div class="row ">
             <div class="col-3 bg-danger">
                 <nav class="bg-danger w-100">
                     <?php include ("menu_forms.php"); ?>
             </div>
-            <div class="col-8 offset-1">
+            <div class="col-9 d-flex justify-content-center">
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">
-                    <div id="imagePreview" class="">
-                                    
-                                </div>
-
                         <form id="uploadForm" role="form" class="form-width">
                             <h4 class="form-header text-center bg-warning">EDITAR CATEGORÍA</h4>
                             <div class="form-group text-left">
@@ -28,9 +23,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-12 my-4 ">
-                                    <input type="file" name="imagen" id="imagen"
-                                    />
-                                    <input type="Submit" />
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center py-3">
+                                            <img id="thumbnil" src="images/user.png" alt="image"/>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <input type="file" accept="image/*" onchange="showMyImage(this)" />
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
@@ -69,26 +69,9 @@
             </div>
         </div>
     </section>
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    (function() {
-        function filePreview(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
 
-                reader.onload = function(e) {
-                    $('#imagePreview').html("< img src = '" + e.target.result + "' />");
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $('#image').change(function() {
-            filePreview(this);
 
-        })
-    })();
-    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -97,6 +80,27 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <script>
+         function showMyImage(fileInput) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {           
+            var file = files[i];
+            var imageType;    
+            if (!file.type.match(imageType)) {
+                continue;
+            }           
+            var img=document.getElementById("thumbnil");            
+            img.file = file;    
+            var reader = new FileReader();
+            reader.onload = (function(aImg) { 
+                return function(e) { 
+                    aImg.src = e.target.result; 
+                }; 
+            })(img);
+            reader.readAsDataURL(file);
+        }    
+    }
     </script>
 </body>
 

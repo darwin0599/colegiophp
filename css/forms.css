@@ -53,3 +53,13 @@ a{
     margin-right:auto;
     display:block;
  }
+
+textarea{
+    width: 100%;
+    min-height: 5rem;
+    max-height: 10rem;
+}
+
+.container-fluid .row #thumbnil{
+    max-width: 50%;
+}

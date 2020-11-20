@@ -46,9 +46,11 @@
                                                 $i++;
                                                 echo ' <tr>
                                                 <th>'.$row['id'].'</th>
-                                                <td><a href="'.$row['url_media'].'" >
-                                                <img class="image_form" src="'.$row['url_media'].'" alt="'.$row['title'].'"
-                                                    ></a></td>
+                                                <td class="d-flex justify-content-center">
+                                                    <a href="'.$row['url_media'].'" >
+                                                        <img class="image_form" src="'.$row['url_media'].'" alt="'.$row['title'].'"
+                                                    ></a>
+                                                </td>
                                                 <td>'.$row['title'].'</td>
                                                 <td>'.$row['section'].'</td>
                                                 <td class="text-center">
