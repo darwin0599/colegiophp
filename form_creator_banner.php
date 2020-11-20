@@ -1,7 +1,7 @@
 <?php 
     include ("config.php");
     include ("header_forms.php");
-    $ret=mysqli_query($con,"SELECT * FROM banners ");
+    $ret=mysqli_query($con,"SELECT * FROM banners");
     $num = $ret->fetch_assoc();
 ?>
 
@@ -15,7 +15,7 @@
             <div class="col-9 d-flex justify-content-center">
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">
-                        <form id="uploadForm" role="form" class="form-width">
+                        <form id="uploadForm" action="registro_banner.php" method="post" role="form" class="form-width">
                             <h4 class="form-header text-center bg-warning">CREAR BANNER</h4>
                             <div class="form-group text-left">
                                 <h5 class="text-dark">Imagenes y videos</h5>
@@ -33,35 +33,33 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
-                                        data-rule="minlen:4" data-msg="Please enter at least 4 chars"
-                                        value="" />
+                                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required/>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <textarea type="text" class="form-control" id="validationTextarea" placeholder="Descripción"
+                                    <textarea type="text" name="description" id="description" class="form-control" placeholder="Descripción"
                                         required></textarea>
 
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="number" name="name" class="form-control" id="name" placeholder="Posición"
-                                        data-rule="minlen:4" data-msg="Please enter at least 4 chars" value="" />
+                                    <input type="number" name="posicion" class="form-control" id="posicion" placeholder="Posición"/>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="exampleFormControlSelect1">Sectión</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>slider_index</option>
-                                        <option>admisiones</option>
-                                        <option>matriculas</option>
-                                        <option>galeria</option>
-                                        <option>cronograma</option>
-                                        <option>horario_jardin</option>
-                                        <option>horario_prejardin</option>
-                                        <option>horario_parvulos</option>
+                                    <select class="form-control" name="seccion" id="seccion">
+                                        <option value="">- Selecciona una la sección -</option>
+                                        <option value="slide_index">slider_index</option>
+                                        <option value="admisiones">admisiones</option>
+                                        <option value="matriculas">matriculas</option>
+                                        <option value="galeria">galeria</option>
+                                        <option value="cronograma">cronograma</option>
+                                        <option value="horario_jardin">horario_jardin</option>
+                                        <option value="horario_prejardin">horario_prejardin</option>
+                                        <option value="horario_parvulos">horario_parvulos</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group text-center bg-warning">
-                                <a href="form_list_banner.php" class="btn btn-outline col-md-4" type="submit">Crear</a>
+                                <button class="btn btn-outline-warning col-md-4" type="submit">Crear</button>
                             </div>
                         </form>
                     </div>
