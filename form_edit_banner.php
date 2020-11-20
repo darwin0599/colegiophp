@@ -25,7 +25,7 @@
                                 <div class="col-12 col-md-12 my-4 ">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center py-3">
-                                            <img id="thumbnil" src="images/user.png" alt="image"/>
+                                            <img id="thumbnil" src="<?php echo $num["url_media"]; ?>" alt="image"/>
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
                                             <input type="file" accept="image/*" onchange="showMyImage(this)" />
@@ -33,17 +33,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
+                                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre"
                                         data-rule="minlen:4" data-msg="Please enter at least 4 chars"
-                                        value="<?php echo $num["title"]; ?>" />
+                                        value="<?php echo $num["title"]; ?>" required/>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <textarea class="form-control" id="validationTextarea" placeholder="Descripción"
+                                    <textarea class="form-control" id="descripción" name="descripción" placeholder="Descripción"
                                         required><?php echo $num["description"]; ?></textarea>
 
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Posición"
+                                    <input type="number" name="posicion" class="form-control" id="posicion" placeholder="Posición"
                                         data-rule="minlen:4" data-msg="Please enter at least 4 chars" value="" />
                                 </div>
                                 <div class="form-group col-md-12">
@@ -70,8 +70,6 @@
         </div>
     </section>
 
-
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -82,25 +80,25 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
     <script>
-         function showMyImage(fileInput) {
-        var files = fileInput.files;
-        for (var i = 0; i < files.length; i++) {           
-            var file = files[i];
-            var imageType;    
-            if (!file.type.match(imageType)) {
-                continue;
-            }           
-            var img=document.getElementById("thumbnil");            
-            img.file = file;    
-            var reader = new FileReader();
-            reader.onload = (function(aImg) { 
-                return function(e) { 
-                    aImg.src = e.target.result; 
-                }; 
-            })(img);
-            reader.readAsDataURL(file);
-        }    
-    }
+            function showMyImage(fileInput) {
+                var files = fileInput.files;
+                for (var i = 0; i < files.length; i++) {           
+                    var file = files[i];
+                    var imageType;    
+                    if (!file.type.match(imageType)) {
+                        continue;
+                    }           
+                    var img=document.getElementById("thumbnil");            
+                    img.file = file;    
+                    var reader = new FileReader();
+                    reader.onload = (function(aImg) { 
+                        return function(e) { 
+                            aImg.src = e.target.result; 
+                        }; 
+                    })(img);
+                    reader.readAsDataURL(file);
+                    }    
+                }
     </script>
 </body>
 
