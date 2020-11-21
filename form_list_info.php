@@ -48,29 +48,29 @@
                                 <tbody>
                                     <tr>
                                         <th><?php echo $num['id']; ?></th>
-                <td><?php echo $num['description']; ?></td>
-                <td><?php echo $num['location']; ?></td>
-                <td><?php echo $num['address']; ?></td>
-                <td><?php echo $num['email_one']; ?></td>
-                <td><?php echo $num['email_two']; ?></td>
-                <td><?php echo $num['phone_one']; ?></td>
-                <td><?php echo $num['phone_two']; ?></td>
-                <td><a href="<?php echo $num['image']; ?>" class="logo">
-                        <img src="<?php echo $num['image']; ?>" alt="<?php echo $num['url_image']; ?>"
-                            class="image_form"></a></td>
-                <td class="text-center">
-                    <a href="form_edit_banner.php" class="btn">
-                        <i class="fa fa-edit"></i>
-                    </a>
-                </td>
-                </tr>
+                                        <td><?php echo $num['description']; ?></td>
+                                        <td><?php echo $num['location']; ?></td>
+                                        <td><?php echo $num['address']; ?></td>
+                                        <td><?php echo $num['email_one']; ?></td>
+                                        <td><?php echo $num['email_two']; ?></td>
+                                        <td><?php echo $num['phone_one']; ?></td>
+                                        <td><?php echo $num['phone_two']; ?></td>
+                                        <td><a href="<?php echo $num['image']; ?>" class="logo">
+                                                <img src="<?php echo $num['image']; ?>"
+                                                    alt="<?php echo $num['url_image']; ?>" class="image_form"></a></td>
+                                        <td class="text-center">
+                                            <a href="form_edit_banner.php" class="btn">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
 
-                </tbody>
-                </table>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-        </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
