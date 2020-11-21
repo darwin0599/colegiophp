@@ -52,7 +52,7 @@
                                                 <td>'.$row['description'].'</td>
                                                 <td>'.$row['section'].'</td>
                                                 <td class="text-center">
-                                                    <a href="form_edit_banner.php" class="btn">
+                                                    <a href="form_edit_admissions.php" class="btn">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                 </td>

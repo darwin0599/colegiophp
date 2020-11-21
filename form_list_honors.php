@@ -21,7 +21,7 @@
                     <form class="form group">
                         <div class="row">
                             <div class="col-12">
-                                Lista de Noticias y Eventos.
+                                Lista de Honores.
                             </div>
                         </div>
                     </form>
@@ -52,7 +52,7 @@
                                                 <td>'.$row['description'].'</td>
                                                 <td>'.$row['grade'].'</td>
                                                 <td class="text-center">
-                                                    <a href="form_edit_banner.php" class="btn">
+                                                    <a href="form_edit_honors.php?id='.$row['id'].'" class="btn">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                 </td>

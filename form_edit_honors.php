@@ -1,8 +1,8 @@
 <?php 
     include ("config.php");
     include ("header_forms.php");
-    $ret=mysqli_query($con,"SELECT * FROM banners WHERE id=".$_GET["id"]);
-    $num = $ret->fetch_assoc();
+    $rethonors=mysqli_query($con,"SELECT * FROM honors WHERE id=".$_GET["id"]);
+    $num = $rethonors->fetch_assoc();
 ?>
 
 <body>
