@@ -74,7 +74,7 @@
                             enctype="multipart/form-data">
                             <h4 class="form-header text-center bg-warning">EDITAR BANNERS</h4>
                             <div class="form-group text-left">
-                                <h5 class="text-dark">Imagenes y videos</h5>
+                                <h5 class="text-dark">Imagenes </h5>
                                 <hr>
                             </div>
                             <div class="row">
