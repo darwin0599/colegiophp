@@ -151,7 +151,7 @@
 <!-- =======Final Seccion Galeria======= -->
 
 <!-- =======Seccion Contactanos======= -->
-<div class="container">
+<div class="container ">
     <p class="h2 text-center color-blue mb-3 bg-color-blue-light text-white p-2">UBICACIÓN</p>
     <div class="row">
         <div class="col-12 ml-0">
@@ -211,27 +211,28 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-8 mt-5 mt-md-0">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="correo.php" method="post" role="form" class="php-email-form">
                 <div class="form-row">
                     <div class="col-12 col-lg-6 form-group ">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Nombres"
-                            data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            data-rule="minlen:4" data-msg="" required/>
                     </div>
                     <div class="col-12 col-lg-6 form-group">
                         <input type="email" class="form-control" name="email" id="email"
-                            placeholder="Correo Electronico" data-rule="email" data-msg="Please enter a valid email" />
+                            placeholder="Correo Electronico" data-rule="email" data-msg="Please enter a valid email" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto"
-                        data-rule="minlen:4" data-msg="Please enter at least 15 chars of subject" />
+                    data-rule="minlen:4" data-msg="Please enter at least 15 chars of subject" required />
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" name="message" rows="4" data-rule="required"
-                        data-msg="PorFavor¡ Escriba su mensaje" placeholder="Message"></textarea>
+                        data-msg="PorFavor¡ Escriba su mensaje" placeholder="Message" required></textarea>
                 </div>
                 <div class="text-center">
-                    <a class="btn btn-outline-primary mb-3">
+                    <a class="btn btn-outline-primary mb-3"
+                    value="Enviar" type="submit" >
                         Enviar Mensaje
                     </a>
                 </div>
