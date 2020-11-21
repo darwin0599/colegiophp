@@ -1,4 +1,6 @@
 <?php
+    $titleErr = $descriptionErr = $positionErr = $sectionErr = "";
+    $title = $description = $position = $section = "";
     if(isset($_POST['nombre']) && trim($_POST['nombre'])){
         $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
         echo "Nombre digitado: ".$nombre;
