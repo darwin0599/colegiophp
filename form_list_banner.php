@@ -1,5 +1,4 @@
 <?php 
-   
     include ("config.php");
     include ('header_forms.php');
     if (isset($_GET['id'])) {
@@ -81,7 +80,7 @@
         function test(id, url_media) {
            Swal
                .fire({
-                   title: "Venta #123465",
+                   title: "Banner",
                    text: "¿Eliminar?",
                    icon: 'warning',
                    showCancelButton: true,

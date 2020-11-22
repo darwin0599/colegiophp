@@ -3,13 +3,13 @@
     include ("header_forms.php");
     $ret=mysqli_query($con,"SELECT * FROM honors WHERE id=".$_GET["id"]);
     $num = $ret->fetch_assoc();
-    $titleErr = $descriptionErr = $positionErr = $sectionErr = $url_mediaErr = '';
-    $title = $description = $position = $section = $image = '';
+    $nameErr = $descriptionErr = $gradeErr = $imageErr = '';
+    $name = $description = $grade = $image = '';
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         if(isset($_POST['name']) && trim($_POST['name'])){
-            $title = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+            $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         }else{
-            $titleErr = "Titulo incorrecto";
+            $nameErr = "Nombre incorrecto";
         }
         if(isset($_POST['description']) && trim($_POST['description'])){
             $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
@@ -17,9 +17,9 @@
             $descriptionErr = "Descripción incorrecta";
         }
         if(isset($_POST['grade']) && trim($_POST['grade'])){
-            $section = filter_var($_POST['grade'], FILTER_SANITIZE_STRING);
+            $grade = filter_var($_POST['grade'], FILTER_SANITIZE_STRING);
         }else{
-            $sectionErr = "Grado incorrecto";
+            $gradeErr = "Grado incorrecto";
         }
 
         $image = $_FILES['image']['name'];
@@ -32,7 +32,7 @@
             }
             else {
                 if (move_uploaded_file($temp, 'images/'.$image)) {
-                    echo 'entra';
+                   
                     chmod('images/'.$image, 0777);
                     unlink($num['image']);
                     $image = 'images/'.mt_srand(5).$image;
@@ -47,8 +47,8 @@
             $image = $num['image'];
         }
 
-        if ($titleErr == '' && $descriptionErr == '' && $positionErr == '' && $sectionErr == '' && $url_mediaErr == '') {
-            $sql = "UPDATE banners SET name = '".$name."', description = '".$description."',, image = '".$image."', grade = '".$grade."' WHERE id = ".$_GET["id"];
+        if ($nameErr == '' && $descriptionErr == '' && $gradeErr == '' && $image == '') {
+            $sql = "UPDATE honors SET name = '".$name."', description = '".$description."', grade = '".$grade."', image = '".$image."' WHERE id = ".$_GET["id"];
             //realizar la insercion en la base de datos
             mysqli_query($con, $sql);
             header("Location: form_list_honors.php");
@@ -81,7 +81,7 @@
                                         <div class="col-12 d-flex justify-content-center">
                                             <input type="file" name="image" accept="image/*"
                                                 onchange="showMyImage(this)" />
-                                            <small class="text-danger"><?php echo $url_mediaErr; ?></small>
+                                            <small class="text-danger"><?php echo $imageErr; ?></small>
                                         </div>
                                     </div>
                                 </div>
@@ -89,8 +89,8 @@
                                     <input type="text" name="name" class="form-control" id="name"
                                         placeholder="Nombre" data-rule="minlen:4"
                                         data-msg="Please enter at least 4 chars"
-                                        value="<?php echo !empty($title) ? $title : $num["name"]; ?>" required />
-                                    <small class="text-danger"><?php echo $titleErr; ?></small>
+                                        value="<?php echo !empty($name) ? $name : $num["name"]; ?>" required />
+                                    <small class="text-danger"><?php echo $nameErr; ?></small>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <textarea class="form-control" id="description" name="description"
@@ -112,10 +112,13 @@
                                         </option>
                                        
                                     </select>
-                                    <small class="text-danger"><?php echo $sectionErr; ?></small>
+                                    <small class="text-danger"><?php echo $gradeErr; 
+                                    ?></small>
                                 </div>
                             </div>
+                            
                             <div class="form-group text-center">
+                            
                                 <input class="btn btn-warning" type="submit" name="" value="Enviar">
                             </div>
                         </form>
@@ -124,7 +127,7 @@
             </div>
         </div>
     </section>
-
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
