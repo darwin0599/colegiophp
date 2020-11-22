@@ -1,8 +1,10 @@
 <?php 
     include ("config.php");
     include ("header_forms.php");
-    $titleErr = $descriptionErr = $positionErr = $sectionErr = $url_mediaErr = '';
-    $title = $description = $position = $section = $url_media = '';
+    $ret=mysqli_query($con,"SELECT * FROM news WHERE id=".$_GET["id"]);
+    $num = $ret->fetch_assoc();
+    $titleErr = $descriptionErr = $sectionErr = $url_mediaErr = '';
+    $title = $description = $section = $url_media = '';
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         if(isset($_POST['title']) && trim($_POST['title'])){
             $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
@@ -13,11 +15,6 @@
             $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
         }else{
             $descriptionErr = "Descripción incorrecta";
-        }
-        if(isset($_POST['position']) && trim($_POST['position'])){
-            $position = filter_var($_POST['position'], FILTER_SANITIZE_STRING);
-        }else{
-            $positionErr = "Posición incorrecta";
         }
         if(isset($_POST['section']) && trim($_POST['section'])){
             $section = filter_var($_POST['section'], FILTER_SANITIZE_STRING);
@@ -35,7 +32,9 @@
             }
             else {
                 if (move_uploaded_file($temp, 'images/'.$url_media)) {
+                    echo 'entra';
                     chmod('images/'.$url_media, 0777);
+                    unlink($num['url_media']);
                     $url_media = 'images/'.mt_srand(5).$url_media;
                 }
                 else {
@@ -44,15 +43,19 @@
             }
         }
 
-        if ($titleErr == '' && $descriptionErr == '' && $positionErr == '' && $sectionErr == '' && $url_mediaErr == '') {
-            $sql = "INSERT INTO banners(id, url_media, title, description, position, type, update_at, section) VALUES 
-                                    (null, '{$url_media}', '{$title}', '{$description}', {$position}, 'image', null, '{$section}')";
+        if($url_media == '') {
+            $url_media = $num['url_media'];
+        }
+
+        if ($titleErr == '' && $descriptionErr == '' && $positionErr == '' && $url_mediaErr == '') {
+            $sql = "UPDATE news SET title = '".$title."', description = '".$description."', url_media = '".$url_media."', section = '".$section."' WHERE id = ".$_GET["id"];
             //realizar la insercion en la base de datos
             mysqli_query($con, $sql);
-            header("Location: form_list_banner.php");
+            header("Location: form_list_news.php");
         }
     }
 ?>
+
 
 <body>
     <section class="container-fluid">
@@ -61,54 +64,58 @@
                 <nav class="bg-danger w-100">
                     <?php include ("menu_forms.php"); ?>
             </div>
-            <div class="col-9 d-flex justify-content-center">
+            <div class="col-9">
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">
-                    <form method="post" action="form_creator_banner.php" enctype="multipart/form-data">
-                            <h4 class="form-header text-center bg-warning">CREAR BANNER</h4>
+                        <form method="post" action="form_edit_news.php?id=<?php echo $_GET['id']; ?>"
+                            enctype="multipart/form-data">
+                            <h4 class="form-header text-center bg-warning">EDITAR PUBLICACIONES</h4>
                             <div class="form-group text-left">
-                                <h5 class="text-dark">IMAGENES </h5>
+                                <h5 class="text-dark">NOTICIAS y EVENTOS</h5>
                                 <hr>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-12 my-4 ">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center py-3">
-                                            <img id="thumbnil" src="images/user.png" alt="image"/>
+                                            <img id="thumbnil" src="<?php echo $num["url_media"]; ?>" alt="image" />
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
-                                            <input type="file" name="url_media" accept="image/*" onchange="showMyImage(this)" />
+                                            <input type="file" name="url_media" accept="image/*"
+                                                onchange="showMyImage(this)" />
+                                            <small class="text-danger"><?php echo $url_mediaErr; ?></small>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="title" id="title" class="form-control" placeholder="Nombre" required/>
+                                    <input type="text" name="title" class="form-control" id="nombre"
+                                        placeholder="Nombre" data-rule="minlen:4"
+                                        data-msg="Please enter at least 4 chars"
+                                        value="<?php echo !empty($title) ? $title : $num["title"]; ?>" required />
+                                    <small class="text-danger"><?php echo $titleErr; ?></small>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <textarea type="text" name="description" id="description" class="form-control" placeholder="Descripción"
-                                        required></textarea>
-
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <input type="number" name="position" class="form-control" id="position" placeholder="Posición"/>
+                                    <textarea class="form-control" id="description" name="description"
+                                        placeholder="Descripción"
+                                        required><?php echo !empty($description) ? $description : $num["description"]; ?></textarea>
+                                    <small class="text-danger"><?php echo $descriptionErr; ?></small>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="exampleFormControlSelect1">Sección</label>
-                                    <select class="form-control" name="section" id="seccion" required>
-                                        <option value="">- Selecciona una la sección -</option>
-                                        <option value="slider_index">slider_index</option>
-                                        <option value="admisiones">admisiones</option>
-                                        <option value="matriculas">matriculas</option>
-                                        <option value="galeria">galeria</option>
-                                        <option value="cronograma">cronograma</option>
-                                        <option value="horario_jardin">horario_jardin</option>
-                                        <option value="horario_prejardin">horario_prejardin</option>
-                                        <option value="horario_parvulos">horario_parvulos</option>
+                                    <select class="form-control" name="section">
+                                        <option value="news"
+                                            <?php if ($num['section'] == 'news') echo 'selected';?>> noticias
+                                        </option>
+                                        <option value="events"
+                                            <?php if ($num['section'] == 'events') echo 'selected';?>> eventos
+                                        </option>
+                                       
                                     </select>
+                                    <small class="text-danger"><?php echo $sectionErr; ?></small>
                                 </div>
                             </div>
                             <div class="form-group text-center">
-                                <button class="btn btn-outline-warning col-md-4" type="submit">Crear</button>
+                                <input class="btn btn-warning" type="submit" name="" value="Enviar">
                             </div>
                         </form>
                     </div>
@@ -127,25 +134,25 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
     <script>
-            function showMyImage(fileInput) {
-                var files = fileInput.files;
-                for (var i = 0; i < files.length; i++) {           
-                    var file = files[i];
-                    var imageType;    
-                    if (!file.type.match(imageType)) {
-                        continue;
-                    }           
-                    var img=document.getElementById("thumbnil");            
-                    img.file = file;    
-                    var reader = new FileReader();
-                    reader.onload = (function(aImg) { 
-                        return function(e) { 
-                            aImg.src = e.target.result; 
-                        }; 
-                    })(img);
-                    reader.readAsDataURL(file);
-                    }    
-                }
+    function showMyImage(fileInput) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageType;
+            if (!file.type.match(imageType)) {
+                continue;
+            }
+            var img = document.getElementById("thumbnil");
+            img.file = file;
+            var reader = new FileReader();
+            reader.onload = (function(aImg) {
+                return function(e) {
+                    aImg.src = e.target.result;
+                };
+            })(img);
+            reader.readAsDataURL(file);
+        }
+    }
     </script>
 </body>
 

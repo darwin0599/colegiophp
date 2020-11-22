@@ -52,9 +52,12 @@
                                                 <td>'.$row['description'].'</td>
                                                 <td>'.$row['section'].'</td>
                                                 <td class="text-center">
-                                                    <a href="form_edit_admissions.php" class="btn">
-                                                        <i class="fa fa-edit"></i>
+                                                    <a href="form_edit_admissions.php?id='.$row['id'].'" class="btn">
+                                                    <i href="" class="fa fa-edit color-blue"></i>
                                                     </a>
+                                                    <button onclick="test('.$row['id'].', `'.$row['url_media'].'`)" class="btn">
+                                                    <i class="fa fa-trash text-danger"></i>
+                                                    </button>
                                                 </td>
                                                 
                                             </tr>';
