@@ -46,8 +46,7 @@
         if($image == '') {
             $image = $num['image'];
         }
-
-        if ($nameErr == '' && $descriptionErr == '' && $gradeErr == '' && $image == '') {
+        if ($nameErr == '' && $descriptionErr == '' && $gradeErr == '' && $imageErr == '') {
             $sql = "UPDATE honors SET name = '".$name."', description = '".$description."', grade = '".$grade."', image = '".$image."' WHERE id = ".$_GET["id"];
             //realizar la insercion en la base de datos
             mysqli_query($con, $sql);
@@ -112,14 +111,12 @@
                                         </option>
                                        
                                     </select>
-                                    <small class="text-danger"><?php echo $gradeErr; 
-                                    ?></small>
+                                    <small class="text-danger"><?php echo $gradeErr;?></small>
                                 </div>
                             </div>
                             
                             <div class="form-group text-center">
-                            
-                                <input class="btn btn-warning" type="submit" name="" value="Enviar">
+                                <input class="btn btn-warning" type="submit" value="Enviar">
                             </div>
                         </form>
                     </div>
