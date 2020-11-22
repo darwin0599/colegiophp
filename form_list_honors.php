@@ -2,6 +2,12 @@
     include ("config.php");
     include ("header_forms.php");
     $rethonors=mysqli_query($con,"SELECT * FROM honors "); 
+    if (isset($_GET['id'])) {
+        $sql = "DELETE FROM honors WHERE id = ".$_GET['id'];
+        mysqli_query($con, $sql);
+        unlink($_GET['image']);
+    }
+    $rethonors=mysqli_query($con,"SELECT * FROM honors "); 
 ?>
 
 <body>
@@ -14,7 +20,7 @@
                 <div class="container ">
                     <div class="d-flex justify-content-between bg-warning form-header">
                         <h2 class="d-flex m-0 align-items-center text-center">ADMINISTRADOR DE CONTENIDO</h2>
-                        <a id="show_add_category" href="form_creator_banner.php"
+                        <a id="show_add_category" href="form_creator_honors.php"
                             class="btn bg-transparent d-flex align-items-center"><i class="fa fa-plus"></i></a>
                     </div>
 
@@ -30,7 +36,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">id</th>
+                                        <th scope="col">Id</th>
                                         <th scope="col">Imagen</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Descripción</th>
@@ -52,9 +58,12 @@
                                                 <td>'.$row['description'].'</td>
                                                 <td>'.$row['grade'].'</td>
                                                 <td class="text-center">
-                                                    <a href="form_edit_honors.php?id='.$row['id'].'" class="btn">
-                                                        <i class="fa fa-edit"></i>
+                                                     <a href="form_edit_honors.php?id='.$row['id'].'" class="btn">
+                                                        <i href="" class="fa fa-edit color-blue"></i>
                                                     </a>
+                                                    <button onclick="test('.$row['id'].', `'.$row['image'].'`)" class="btn">
+                                                        <i class="fa fa-trash text-danger"></i>
+                                                    </button>
                                                 </td>
                                                 
                                             </tr>';
@@ -68,6 +77,26 @@
             </div>
         </div>
     </section>
+    <script type="text/javascript">
+        function test(id, image) {
+           Swal
+               .fire({
+                   title: "Honores",
+                   text: "¿Eliminar?",
+                   icon: 'warning',
+                   showCancelButton: true,
+                   confirmButtonText: "Sí, eliminar",
+                   cancelButtonText: "Cancelar",
+               })
+               .then(resultado => {
+                   if (resultado.value) {
+                       // Hicieron click en "Sí"
+                       var newLocation = "form_list_honors.php?id=" + id + "&image=" + image;
+                       window.location = newLocation;
+                   }
+               });
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

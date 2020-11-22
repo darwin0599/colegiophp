@@ -1,8 +1,6 @@
 <?php 
     include ("config.php");
     include ("header_forms.php");
-    $ret=mysqli_query($con,"SELECT * FROM honors WHERE id=".$_GET["id"]);
-    $num = $ret->fetch_assoc();
     $nameErr = $descriptionErr = $gradeErr = $imageErr = '';
     $name = $description = $grade = $image = '';
     if ($_SERVER['REQUEST_METHOD']=="POST") {
@@ -34,7 +32,6 @@
                 if (move_uploaded_file($temp, 'images/'.$image)) {
                    
                     chmod('images/'.$image, 0777);
-                    unlink($num['image']);
                     $image = 'images/'.mt_srand(5).$image;
                 }
                 else {
@@ -43,11 +40,8 @@
             }
         }
 
-        if($image == '') {
-            $image = $num['image'];
-        }
         if ($nameErr == '' && $descriptionErr == '' && $gradeErr == '' && $imageErr == '') {
-            $sql = "UPDATE honors SET name = '".$name."', description = '".$description."', grade = '".$grade."', image = '".$image."' WHERE id = ".$_GET["id"];
+            $sql = "INSERT INTO honors(id, image, name, description, grade) VALUES (null, '{$image}', '{$name}', '{$description}', '{$grade}')";
             //realizar la insercion en la base de datos
             mysqli_query($con, $sql);
             header("Location: form_list_honors.php");
@@ -64,7 +58,7 @@
             <div class="col-9">
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">
-                        <form method="post" action="form_edit_honors.php?id=<?php echo $_GET['id']; ?>"
+                        <form method="post" action="form_creator_honors.php"
                             enctype="multipart/form-data">
                             <h4 class="form-header text-center bg-warning">EDITAR CUADRO DE HONOR</h4>
                             <div class="form-group text-left">
@@ -75,11 +69,11 @@
                                 <div class="col-12 col-md-12 my-4 ">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center py-3">
-                                            <img id="thumbnil" src="<?php echo $num["image"]; ?>" alt="image" />
+                                            <img id="thumbnil" src="" alt="image" />
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
                                             <input type="file" name="image" accept="image/*"
-                                                onchange="showMyImage(this)" />
+                                                onchange="showMyImage(this)" required />
                                             <small class="text-danger"><?php echo $imageErr; ?></small>
                                         </div>
                                     </div>
@@ -88,26 +82,23 @@
                                     <input type="text" name="name" class="form-control" id="name"
                                         placeholder="Nombre" data-rule="minlen:4"
                                         data-msg="Please enter at least 4 chars"
-                                        value="<?php echo !empty($name) ? $name : $num["name"]; ?>" required />
+                                        value="<?php echo $name; ?>" required />
                                     <small class="text-danger"><?php echo $nameErr; ?></small>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <textarea class="form-control" id="description" name="description"
                                         placeholder="Descripción"
-                                        required><?php echo !empty($description) ? $description : $num["description"]; ?></textarea>
+                                        required><?php echo $description; ?></textarea>
                                     <small class="text-danger"><?php echo $descriptionErr; ?></small>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="exampleFormControlSelect1">Grado</label>
                                     <select class="form-control" name="grade">
-                                        <option value="jardin"
-                                            <?php if ($num['grade'] == 'jardin') echo 'selected';?>>Jardin
+                                        <option value="jardin">Jardin
                                         </option>
-                                        <option value="prejardin"
-                                            <?php if ($num['grade'] == 'prejardin') echo 'selected';?>>Prejardin
+                                        <option value="prejardin">Prejardin
                                         </option>
-                                        <option value="parvulos"
-                                            <?php if ($num['grade'] == 'parvulos') echo 'selected'?>>Parvulos
+                                        <option value="parvulos">Parvulos
                                         </option>
                                        
                                     </select>
