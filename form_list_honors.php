@@ -20,7 +20,7 @@
                 <div class="container ">
                     <div class="d-flex justify-content-between bg-warning form-header">
                         <h2 class="d-flex m-0 align-items-center text-center">ADMINISTRADOR DE CONTENIDO</h2>
-                        <a id="show_add_category" href="form_creator_banner.php"
+                        <a id="show_add_category" href="form_creator_honors.php"
                             class="btn bg-transparent d-flex align-items-center"><i class="fa fa-plus"></i></a>
                     </div>
 
