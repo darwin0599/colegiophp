@@ -96,7 +96,7 @@
                                     <label for="exampleFormControlSelect1">Sección</label>
                                     <select class="form-control" name="section" id="seccion" required>
                                         <option value="">- Selecciona una la sección -</option>
-                                        <option value="slide_index">slider_index</option>
+                                        <option value="slider_index">slider_index</option>
                                         <option value="admisiones">admisiones</option>
                                         <option value="matriculas">matriculas</option>
                                         <option value="galeria">galeria</option>
