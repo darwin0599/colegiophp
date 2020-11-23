@@ -65,7 +65,7 @@
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">
                     <form method="post" action="form_creator_banner.php" enctype="multipart/form-data">
-                            <h4 class="form-header text-center bg-warning">CREAR BANNER</h4>
+                            <h4 class="form-header text-center bg-primary">CREAR NUEVO BANNER</h4>
                             <div class="form-group text-left">
                                 <h5 class="text-dark">IMAGENES </h5>
                                 <hr>

@@ -66,9 +66,9 @@
                     <div class="col-md-10 m-auto">
                         <form method="post" action="form_edit_honors.php?id=<?php echo $_GET['id']; ?>"
                             enctype="multipart/form-data">
-                            <h4 class="form-header text-center bg-warning">EDITAR CUADRO DE HONOR</h4>
+                            <h4 class="form-header text-center bg-primary">EDITAR CUADRO DE HONOR</h4>
                             <div class="form-group text-left">
-                                <h5 class="text-dark">Estudiantes</h5>
+                                <h5 class="text-dark">ESTUDIANTE</h5>
                                 <hr>
                             </div>
                             <div class="row">

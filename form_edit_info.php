@@ -92,9 +92,9 @@
                     <div class="col-md-10 m-auto">
                         <form method="post" action="form_edit_info.php?id=<?php echo $_GET['id']; ?>"
                             enctype="multipart/form-data">
-                            <h4 class="form-header text-center bg-warning">EDITAR INFORMATION</h4>
+                            <h4 class="form-header text-center bg-primary">EDITAR INFORMATION</h4>
                             <div class="form-group text-left">
-                                <h5 class="text-dark">Imagenes </h5>
+                                <h5 class="text-dark">INFORMACIÓN </h5>
                                 <hr>
                             </div>
                             <div class="row">

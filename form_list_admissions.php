@@ -13,15 +13,15 @@
             </div>
             <div class="col-8 center-block">
                 <div class="container ">
-                    <div class="d-flex justify-content-between bg-warning form-header">
+                    <div class="d-flex justify-content-between bg-primary form-header">
                         <h2 class="d-flex m-0 align-items-center text-center">ADMINISTRADOR DE CONTENIDO</h2>
-                        <a id="show_add_category" href="form_creator_banner.php"
+                        <a id="show_add_category" href="form_creator_admissions.php"
                             class="btn bg-transparent d-flex align-items-center"><i class="fa fa-plus"></i></a>
                     </div>
                     <form class="form group">
                         <div class="row">
                             <div class="col-12">
-                                Lista de Banners, Imagenes, Videos.
+                                LISTA DE ADMISIONES Y MATRICULAS.
                             </div>
                         </div>
                     </form>

@@ -1,10 +1,9 @@
 <?php 
     include ("config.php");
     include ("header_forms.php");
-    $ret=mysqli_query($con,"SELECT * FROM banners WHERE id=".$_GET["id"]);
-    $num = $ret->fetch_assoc();
-    $titleErr = $descriptionErr = $positionErr = $sectionErr = $url_mediaErr = '';
-    $title = $description = $position = $section = $url_media = '';
+    $titleErr = $descriptionErr = $sectionErr = $url_mediaErr = '';
+    $title = $description = $section = $url_media = '';
+
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         if(isset($_POST['title']) && trim($_POST['title'])){
             $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
@@ -15,11 +14,6 @@
             $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
         }else{
             $descriptionErr = "Descripción incorrecta";
-        }
-        if(isset($_POST['position']) && trim($_POST['position'])){
-            $position = filter_var($_POST['position'], FILTER_SANITIZE_STRING);
-        }else{
-            $positionErr = "Posición incorrecta";
         }
         if(isset($_POST['section']) && trim($_POST['section'])){
             $section = filter_var($_POST['section'], FILTER_SANITIZE_STRING);
@@ -52,11 +46,11 @@
             $url_media = $num['url_media'];
         }
 
-        if ($titleErr == '' && $descriptionErr == '' && $positionErr == '' && $sectionErr == '' && $url_mediaErr == '') {
-            $sql = "UPDATE banners SET title = '".$title."', description = '".$description."', position = '".$position."', url_media = '".$url_media."', section = '".$section."' WHERE id = ".$_GET["id"];
+        if ($titleErr == '' && $descriptionErr == '' && $sectionErr == '' && $url_mediaErr == '') {
+            $sql = "INSERT INTO news(id, url_media, title, description, section) VALUES(null, '{$url_media}', '{$title}', '{$description}', '{$section}')";
             //realizar la insercion en la base de datos
             mysqli_query($con, $sql);
-            header("Location: form_list_banner.php");
+            header("Location: form_list_news.php");
         }
     }
 ?>
@@ -70,78 +64,51 @@
             <div class="col-9">
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">
-                        <form method="post" action="form_edit_banner.php?id=<?php echo $_GET['id']; ?>"
+                        <form method="post" action="form_creator_news.php"
                             enctype="multipart/form-data">
-                            <h4 class="form-header text-center bg-primary">EDITAR BANNERS</h4>
+                            <h4 class="form-header text-center bg-primary">CREAR NUEVA PUBLICACIÓN</h4>
                             <div class="form-group text-left">
-                                <h5 class="text-dark">IMAGENES </h5>
+                                <h5 class="text-dark">NOTICIAS Y EVENTOS</h5>
                                 <hr>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-12 my-4 ">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center py-3">
-                                            <img id="thumbnil" src="<?php echo $num["url_media"]; ?>" alt="image" />
+                                            <img id="thumbnil" src="images/user.png" alt="image" />
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
                                             <input type="file" name="url_media" accept="image/*"
                                                 onchange="showMyImage(this)" />
-                                            <small class="text-danger"><?php echo $url_mediaErr; ?></small>
+                                            <small class="text-danger"></small>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="title" class="form-control" id="nombre"
-                                        placeholder="Nombre" data-rule="minlen:4"
+                                    <input type="text" name="title" class="form-control" id="title"
+                                        placeholder="Titulo" data-rule="minlen:4"
                                         data-msg="Please enter at least 4 chars"
-                                        value="<?php echo !empty($title) ? $title : $num["title"]; ?>" required />
-                                    <small class="text-danger"><?php echo $titleErr; ?></small>
+                                        value="" required />
+                                    <small class="text-danger"></small>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <textarea class="form-control" id="description" name="description"
                                         placeholder="Descripción"
-                                        required><?php echo !empty($description) ? $description : $num["description"]; ?></textarea>
-                                    <small class="text-danger"><?php echo $descriptionErr; ?></small>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <input type="number" name="position" class="form-control" id="posicion"
-                                        placeholder="Posición" data-rule="minlen:4"
-                                        data-msg="Please enter at least 4 chars" required
-                                        value="<?php echo !empty($position) ? $position : $num["position"]; ?>" />
-                                    <small class="text-danger"><?php echo $positionErr; ?></small>
+                                        required></textarea>
+                                    <small class="text-danger"></small>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="exampleFormControlSelect1">Sección</label>
                                     <select class="form-control" name="section">
-                                        <option value="slider_index"
-                                            <?php if ($num['section'] == 'slider_index') echo 'selected';?>>slider_index
-                                        </option>
-                                        <option value="admisiones"
-                                            <?php if ($num['section'] == 'admisiones') echo 'selected';?>>admisiones
-                                        </option>
-                                        <option value="matriculas"
-                                            <?php if ($num['section'] == 'matriculas') echo 'selected'?>>matriculas
-                                        </option>
-                                        <option value="galeria"
-                                            <?php if ($num['section'] == 'galeria') echo 'selected'?>>galeria</option>
-                                        <option value="cronograma"
-                                            <?php if ($num['section'] == 'cronograma') echo 'selected'?>>cronograma
-                                        </option>
-                                        <option value="horario_jardin"
-                                            <?php if ($num['section'] == 'horario_jardin') echo 'selected'?>>
-                                            horario_jardin</option>
-                                        <option value="horario_prejardin"
-                                            <?php if ($num['section'] == 'horario_prejardin') echo 'selected'?>>
-                                            horario_prejardin</option>
-                                        <option value="horario_parvulos"
-                                            <?php if ($num['section'] == 'horario_parvulos') echo 'selected'?>>
-                                            horario_parvulos</option>
+                                    <option value="">- Selecciona una la sección -</option>
+                                        <option value="admisiones">Noticias</option>
+                                        <option value="matriculas">Eventos</option>
                                     </select>
-                                    <small class="text-danger"><?php echo $sectionErr; ?></small>
+                                    <small class="text-danger"> </small>
                                 </div>
                             </div>
                             <div class="form-group text-center">
-                                <input class="btn btn-warning" type="submit" name="" value="Enviar">
+                                <input class="btn btn-warning" type="submit" name="" value="Crear">
                             </div>
                         </form>
                     </div>

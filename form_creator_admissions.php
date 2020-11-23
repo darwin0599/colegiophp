@@ -1,10 +1,9 @@
 <?php 
     include ("config.php");
     include ("header_forms.php");
-    $ret=mysqli_query($con,"SELECT * FROM news WHERE id=".$_GET["id"]);
-    $num = $ret->fetch_assoc();
     $titleErr = $descriptionErr = $sectionErr = $url_mediaErr = '';
     $title = $description = $section = $url_media = '';
+
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         if(isset($_POST['title']) && trim($_POST['title'])){
             $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
@@ -47,16 +46,14 @@
             $url_media = $num['url_media'];
         }
 
-        if ($titleErr == '' && $descriptionErr == '' && $positionErr == '' && $url_mediaErr == '') {
-            $sql = "UPDATE news SET title = '".$title."', description = '".$description."', url_media = '".$url_media."', section = '".$section."' WHERE id = ".$_GET["id"];
+        if ($titleErr == '' && $descriptionErr == '' && $sectionErr == '' && $url_mediaErr == '') {
+            $sql = "INSERT INTO news(id, url_media, title, description, section) VALUES(null, '{$url_media}', '{$title}', '{$description}', '{$section}')";
             //realizar la insercion en la base de datos
             mysqli_query($con, $sql);
-            header("Location: form_list_news.php");
+            header("Location: form_list_admissions.php");
         }
     }
 ?>
-
-
 <body>
     <section class="container-fluid">
         <div class="row ">
@@ -67,9 +64,9 @@
             <div class="col-9">
                 <div class="container my-3">
                     <div class="col-md-10 m-auto">
-                        <form method="post" action="form_edit_news.php?id=<?php echo $_GET['id']; ?>"
+                        <form method="post" action="form_creator_admissions.php"
                             enctype="multipart/form-data">
-                            <h4 class="form-header text-center bg-warning">EDITAR PUBLICACIONES</h4>
+                            <h4 class="form-header text-center bg-primary">CREAR NUEVA PUBLICACIÓN</h4>
                             <div class="form-group text-left">
                                 <h5 class="text-dark">ADMISIONES y MATRICULAS</h5>
                                 <hr>
@@ -78,7 +75,7 @@
                                 <div class="col-12 col-md-12 my-4 ">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center py-3">
-                                            <img id="thumbnil" src="" alt="image" />
+                                            <img id="thumbnil" src="images/user.png" alt="image" />
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
                                             <input type="file" name="url_media" accept="image/*"
@@ -88,8 +85,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="title" class="form-control" id="nombre"
-                                        placeholder="Nombre" data-rule="minlen:4"
+                                    <input type="text" name="title" class="form-control" id="title"
+                                        placeholder="Titulo" data-rule="minlen:4"
                                         data-msg="Please enter at least 4 chars"
                                         value="" required />
                                     <small class="text-danger"></small>
@@ -104,10 +101,8 @@
                                     <label for="exampleFormControlSelect1">Sección</label>
                                     <select class="form-control" name="section">
                                     <option value="">- Selecciona una la sección -</option>
-                                        <option value="admisiones">admisiones</option>
-                                        <option value="matriculas">matriculas</option>
-                                        
-                                       
+                                        <option value="admisiones">Admisiones</option>
+                                        <option value="matriculas">Matriculas</option>
                                     </select>
                                     <small class="text-danger"> </small>
                                 </div>
@@ -121,3 +116,37 @@
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <script>
+    function showMyImage(fileInput) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageType;
+            if (!file.type.match(imageType)) {
+                continue;
+            }
+            var img = document.getElementById("thumbnil");
+            img.file = file;
+            var reader = new FileReader();
+            reader.onload = (function(aImg) {
+                return function(e) {
+                    aImg.src = e.target.result;
+                };
+            })(img);
+            reader.readAsDataURL(file);
+        }
+    }
+    </script>
+</body>
+
+</html>
