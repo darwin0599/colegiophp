@@ -511,3 +511,70 @@ header .bg-red {
   background-color: darkred;
   color: whitesmoke;
 }
+
+/*Administrador*/
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none !important;
+  color: #fff !important;
+}
+.image_form {
+  max-height: 4rem;
+  align-content: space-between;
+}
+
+.forms-content{
+  max-width: 90%;
+}
+
+.form-header {
+  width: 100%;
+  margin-bottom: 30px !important;
+  padding: 15px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  color: black !important;
+}
+
+.form-width {
+  padding: 0px 30px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0px 2px 1px #ddd;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+}
+
+.card-stats .card-body {
+  padding: 1rem 1.5rem;
+}
+
+.card-stats .card-status-bullet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.center-block {
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+textarea{
+  width: 100%;
+  min-height: 5rem;
+  max-height: 10rem;
+}
+
+.container-fluid .row #thumbnil{
+  max-width: 50%;
+}
