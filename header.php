@@ -69,25 +69,25 @@
                 </li>
             </ul>
         </div>
-        <div class="container">
-            <div id="social" class="row justify-content-md-center">
-                <div class="contact-info col-12 col-md-6 col-lg-5 ">
+        <div id="social" class="container">
+            <div  class="row justify-content-md-center">
+                <div class="col-12 col-md-6 col-lg-5 ">
                     <div class="row">
                         <div class="col-12 col-12 d-flex justify-content-center justify-content-md-start">
-                            <a href="#"> <i class="fas fa-map-marker-alt"></i> Crr 8 # 14a-15 Barbosa,
+                            <a class="text-dark" href="#"> <i class="fas fa-map-marker-alt"></i> Crr 8 # 14a-15 Barbosa,
                                 Santander.</a>
                         </div>
                         <div class="col-12 d-flex justify-content-center justify-content-md-start">
-                            <a href="mailto:contact@example.com" target="_blank"><i class="far fa-envelope-open"></i>
+                            <a class="text-dark" href="mailto:contact@example.com" target="_blank"><i class="far fa-envelope-open"></i>
                                 contact@example.com</a>
                         </div>
                         <div class="col-12 col-12 d-flex justify-content-center justify-content-md-start">
-                            <a href="https://api.whatsapp.com/send?phone=573136052704&text=Hola!%20Quiero%20generar%20mas%20ventas!"
+                            <a class="text-dark" href="https://api.whatsapp.com/send?phone=573136052704&text=Hola!%20Quiero%20generar%20mas%20ventas!"
                                 target="_blank"><i class="fab fa-whatsapp"></i> +57 3136052704</a>
                         </div>
                     </div>
                 </div>
-                <div class="social-network d-flex justify-content-center align-items-center col-12 col-md-6 col-lg-6">
+                <div  class="social-network d-flex justify-content-center align-items-center col-12 col-md-6 col-lg-6">
                     <a href="#" class="twitter mx-1" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="facebook mx-1"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="instagram mx-1"><i class="fab fa-instagram"></i></a>

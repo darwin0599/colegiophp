@@ -24,7 +24,7 @@
                             <a href="form_list_info.php"><i class="fas fa-cog"></i> Información Contacto</a>
                         </li>
                         <li class="py-2">
-                            <a href="registro_estudiante.php"><i class="fas fa-cog"></i> Registro Estudiantes</a>
+                            <a href="registro_estudiante_nuevo.php"><i class="fas fa-cog"></i> Registro Estudiantes</a>
                         </li>
                         <li class="py-2">
                             <a href="registrar.php"><i class="fas fa-cog"></i> Registro Observaciones</a>

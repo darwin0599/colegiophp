@@ -21,13 +21,13 @@
                 </a>
             </div>
             <div class="col-12 mt-5">
-                <p class="name h2 text-center">
-                    <a href="index.php">Centro Educativo Mi Pequeño Mundo</a>
+                <p class="name title h2 text-center">
+                    <a class="color-blue" href="index.php">Centro Educativo Mi Pequeño Mundo</a>
                 </p>
             </div>
             <div class="col-12 text-center mt-3">
-                <p class="lema text-center h3">
-                    <a href="index.php">Formando Futuros Soñadores</a>
+                <p class="lema title text-center h3">
+                    <a class="color-blue"  href="index.php">Formando Futuros Soñadores</a>
                 </p>
             </div>
         </div>

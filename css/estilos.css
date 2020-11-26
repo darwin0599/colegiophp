@@ -40,20 +40,20 @@ hr {
 --------------------------------------------------------------*/
 
 #social .contact-info a, #social-footer .contact-info a {
-  color:#000000;
+  color:#ffff  !important;
   transition: 0.3s;
   text-decoration: none;
 }
 
 #social .contact-info a:hover, #social-footer .contact-info a:hover {
-  color: #1977cc;
+  color: #000000;
 }
 
 #social .social-network a, #social-footer .social-footer-network a {
   display: inline-flex;
   width: 2rem;
   height: 2rem;
-  color: white;
+  color:#ffff !important;
   background-color: #1977cc;
   border: .1rem #1977cc solid;
   border-radius: 50%;
@@ -67,7 +67,7 @@ hr {
   display: inline-flex;
   width: 2rem;
   height: 2rem;
-  color: white;
+  color:#ffff  !important;
   background-color: #1977cc;
   border: .1rem #1977cc solid;
   border-radius: 50%;
@@ -377,12 +377,14 @@ header .bg-red {
 
 #footer .footer-top .footer-links {
   margin-bottom: 30px;
+  color: #000;
 }
 
 #footer .footer-top .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  color: #000;
 }
 
 #footer .footer-top .footer-links ul i {
@@ -452,35 +454,15 @@ header .bg-red {
   font-size: 16px;
   padding: 0 20px;
   background: #1977cc;
-  color: #000000;
+  color: floralwhite;
   transition:0.3s;
   border-radius:50px;
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: #1c84e3;
+  background: #000000;
 }
 
-#footer .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #1977cc;
-  color:#000000;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#footer .social-links a:hover {
-  background: #1c84e3;
-  color: #000000;
-  text-decoration: none;
-}
 
 /*--------------------------------------------------------------
 # Cuadro de Honor
