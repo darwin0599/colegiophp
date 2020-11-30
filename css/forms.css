@@ -4,7 +4,7 @@ ul{
 
 a{
     text-decoration: none ;
-    color: #fff ;
+    color: #fff !important;
 }
 .image_form {
     max-height: 4rem;
@@ -63,3 +63,6 @@ textarea{
 .container-fluid .row #thumbnil{
     max-width: 50%;
 }
+.color-blue {
+    color: #007bff !important;
+  }

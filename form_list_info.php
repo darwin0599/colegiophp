@@ -58,7 +58,7 @@
                                                     alt="<?php echo $num['url_image']; ?>" class="image_form"></a></td>
                                         <td class="text-center">
                                             <a href="form_edit_info.php?id=<?php echo $num['id']; ?>" class="btn">
-                                                <i class="fa fa-edit color-blue"></i>
+                                                <i class="fa fa-edit text-primary"></i>
                                             </a>
                                         </td>
                                     </tr>

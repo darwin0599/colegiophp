@@ -26,7 +26,7 @@
         <div class="container ">
         <div class="form-content row justify-content-end PY-5">
             <div class="col-10 col-md-5">
-                <div class="row justify-content-center border border- font-weight-bold rounded">
+                <div class="row justify-content-center border border-dark font-weight-bold rounded">
                     <div class="col-8 text-center my-4">
                         <img src="images/circle-cropped.png" class="img-fluid" alt="">
                     </div>
@@ -40,7 +40,7 @@
                                 <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Usuario">
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Usuario" require>
                             </div>
                             </div>
                             <div class="col-12">
@@ -48,7 +48,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-lock"></i></div>
                                     </div>
-                                <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Contraseña">
+                                <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Contraseña" require>
                                 </div>
                             </div>
                             <div class="col-12">

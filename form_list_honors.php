@@ -59,7 +59,7 @@
                                                 <td>'.$row['grade'].'</td>
                                                 <td class="text-center">
                                                      <a href="form_edit_honors.php?id='.$row['id'].'" class="btn">
-                                                        <i href="" class="fa fa-edit color-blue"></i>
+                                                        <i href="" class="fa fa-edit text-primary"></i>
                                                     </a>
                                                     <button onclick="test('.$row['id'].', `'.$row['image'].'`)" class="btn">
                                                         <i class="fa fa-trash text-danger"></i>

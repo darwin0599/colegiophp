@@ -1,98 +1,18 @@
-<?php 
-    include ("config.php");
-    include ("header_forms.php");
-    $primer_apellidoErr = $segundo_apellidoErr = $nombreErr  = $dateErr = $nacimientoErr = $rhErr = $section_documentoErr = $documentoErr = $expedicionErr = $section_gradoErr = $provieneErr = $section_regimenErr =$url_mediaErr = '';
-    $primer_apellido = $segundo_apellido = $nombre = $date = $nacimiento = $rh = $section_documento = $documento = $expedicion = $section_grado = $proviene = $section_regimen = $url_media = '';
-    if ($_SERVER['REQUEST_METHOD']=="POST") {
-        if(isset($_POST['primer_apellido']) && trim($_POST['primer_apellido'])){
-            $primer_apellido = filter_var($_POST['primer_apellido'], FILTER_SANITIZE_STRING);
-        }else{
-            $primer_apellidoErr = "Primer apellido incorrecto";
-        }
-        if(isset($_POST['segundo_apellido']) && trim($_POST['segundo_apellido'])){
-            $segundo_apellido = filter_var($_POST['segundo_apellido'], FILTER_SANITIZE_STRING);
-        }else{
-            $segundo_apellidoErr = "Segundo apellido incorrecto";
-        }
-        if(isset($_POST['nombre']) && trim($_POST['nombre'])){
-            $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
-        }else{
-            $nombreErr = "Nombre incorrecto";
-        }
-        if(isset($_POST['date']) && trim($_POST['date'])){
-            $date = filter_var($_POST['date'], FILTER_SANITIZE_STRING);
-        }else{
-            $dateErr = "Fecha incorrecto";
-        }
-        if(isset($_POST['nacimiento']) && trim($_POST['nacimiento'])){
-            $nacimiento = filter_var($_POST['nacimiento'], FILTER_SANITIZE_STRING);
-        }else{
-            $nacimientoErr = "Lugar de nacimiento incorrecto";
-        }
-        if(isset($_POST['rh']) && trim($_POST['rh'])){
-            $rh = filter_var($_POST['rh'], FILTER_SANITIZE_STRING);
-        }else{
-            $rhErr = "Tipo de sangre incorrecto";
-        }
-        if(isset($_POST['section_documento']) && trim($_POST['section_documento'])){
-            $section_documento = filter_var($_POST['section_documento'], FILTER_SANITIZE_STRING);
-        }else{
-            $section_documentoErr = "Tipo de documento incorrecta";
-        }
-        if(isset($_POST['documento']) && trim($_POST['documento'])){
-            $documento = filter_var($_POST['documento'], FILTER_SANITIZE_STRING);
-        }else{
-            $documentoErr = "Documento incorrecta";
-        }
-        if(isset($_POST['expedicion']) && trim($_POST['expedicion'])){
-            $expedicion = filter_var($_POST['expedicion'], FILTER_SANITIZE_STRING);
-        }else{
-            $expedicionErr = "Expedición incorrecta";
-        }
-        if(isset($_POST['section_grado']) && trim($_POST['section_grado'])){
-            $section_grado = filter_var($_POST['section_grado'], FILTER_SANITIZE_STRING);
-        }else{
-            $section_gradoErr = "Grado incorrecto";
-        }
-        if(isset($_POST['proviene']) && trim($_POST['proviene'])){
-            $proviene = filter_var($_POST['proviene'], FILTER_SANITIZE_STRING);
-        }else{
-            $provieneErr = "Institución incorrecta";
-        }
-        if(isset($_POST['section_regimen']) && trim($_POST['section_regimen'])){
-            $section_regimen = filter_var($_POST['expedicion'], FILTER_SANITIZE_STRING);
-        }else{
-            $section_regimenErr = "Regimen incorrecta";
-        }
+Yo -------------------------------------------------------------------------------------- identificado(a) con C.C.
+N°…………………………………….
+Expedida en……………………………………………….. En calidad de acudiente del niño/a……………………………………………………………..
+Me comprometo a cumplir con el siguiente reglamento interno en su totalidad y acatar las sanciones correspondientes en
+caso de incumplimiento para con el colegio.
 
-        $url_media = $_FILES['url_media']['name'];
-        if (isset($url_media) && $url_media != "") {
-            $tipo = $_FILES['url_media']['type'];
-            $tamano = $_FILES['url_media']['size'];
-            $temp = $_FILES['url_media']['tmp_name'];
-            if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
-                $url_mediaErr = 'La extensión o el tamaño de los archivos no es correcta - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.';
-            }
-            else {
-                if (move_uploaded_file($temp, 'images/'.$url_media)) {
-                    chmod('images/'.$url_media, 0777);
-                    $url_media = 'images/'.mt_srand(5).$url_media;
-                }
-                else {
-                    $url_mediaErr = 'Ocurrió algún error al subir el fichero. No pudo guardarse.';
-                }
-            }
-        }
+AUTORIZACION: permito que se le tomen fotos al niño o niño que represento como acudiente, estas pueden ser publicadas en
+las redes sociales, siempre y cuando no se afecte la dignidad del menor.
+SI--------------------------- NO------------------------
+En constancia se firma a los ------------ días del mes de------------- de 20—
 
-        if ($titleErr == '' && $descriptionErr == '' && $positionErr == '' && $sectionErr == '' && $url_mediaErr == '') {
-            $sql = "INSERT INTO banners(id, url_media, title, description, position, type, update_at, section) VALUES 
-                                    (null, '{$url_media}', '{$title}', '{$description}', {$position}, 'image', null, '{$section}')";
-            //realizar la insercion en la base de datos
-            mysqli_query($con, $sql);
-            header("Location: form_list_banner.php");
-        }
-    }
-?>
+ACUDIENTE ------------------------------------------
+C.C N°------------------------------------------- COORDINADORA
+
+
 
 <body>
     <section class="container-fluid">
@@ -157,10 +77,9 @@
                                         placeholder="Lugar de expedición" required />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <select class="form-control" name="rol" id="rol"
-                                        required>
+                                    <select class="form-control" name="rol" id="rol" required>
                                         <option value="">Rol</option>
-                            
+
                                         <option value="registro">Estudiante</option>
                                     </select>
                                 </div>
@@ -169,8 +88,8 @@
                                         placeholder="Localidad O Barrio" required />
                                 </div>
                                 <div class="form-group col-md-2">
-                                    <input type="number" name="edad" id="edad" class="form-control"
-                                        placeholder="Edad" required />
+                                    <input type="number" name="edad" id="edad" class="form-control" placeholder="Edad"
+                                        required />
                                 </div>
 
 
@@ -194,19 +113,61 @@
 
                                 <div class="form-group text-center col-12">
                                     <hr>
-                                    <h5 class="text-dark">GRADO AL QUE ASPIRA INGRESAR</h5>
+                                    <h5 class="text-dark">COMPROMISOS</h5>
+                                    <P>
+                                    <P> 1. El pago de la pensión se hará durante los CINCO PRIMEROS DIAS DEL MES. El no
+                                        pago en los días estipulados, se cobrara el 2% de interés por día.  </P>
+                                    <p> 2. La asistencia a la escuela de padres es obligatoria. La no asistencia
+                                        acarreara una observación a la carpeta de el niño(a). </P>
+                                    <p> 3. En caso de enfermedad del niño(a) se deberá enviar excusa vía telefónica o
+                                        escrita el mismo día de la falta. En caso contrario y faltar por más de tres
+                                        días sin causa justificada será causal para perder el cupo en el colegio,
+                                        igualmente cuando se encuentre enfermo(a) deberá ser llevado(a) al médico y
+                                        abstenerse de enviarlo(a) al colegio. Las fiebres, vómitos, diarreas, tos, gripe
+                                        persistentes a cualquier otra enfermedadinfecto contagiosa, deberá ser tratada
+                                        por sus familiares para evitar un contagio masivo en el colegio. Excusa si es
+                                        posible con la asistencia al médico o la incapacidad del médico.  </P>
+                                    <p> 4. Llevar al niño o niña en los horarios establecidos por el colegio (ser muy
+                                        puntuales). En caso de llegar después de la hora fijada sin justificación valida
+                                        no se recibirá el niño. En caso de retirar el niño o niña después de la hora
+                                        establecida, ni la rectora, coordinadora , docentes, ni la unta interna de
+                                        padres respondan por lo que le pueda suceder al niño o niña después de la hora
+                                        de salida ( BIEN CLARO), se deberá llevar una excusa firmada por el acudiente de
+                                        el niño o niña. </P>
+                                    <p> 5. El padre de familia (acudiente) deberá responder por los daños causados por
+                                        su hijo en el colegio, cualquiera que este sea. </P>
+                                    <p> 6. Al niño o niña se le debe llevar bien presentado, bañado y con el respectivo
+                                        uniforme que identifica la pertenencia al colegio. </P>
+                                    <p> 7. En caso que el niño o niña se ensucie en la ropa se le avisara
+                                        telefónicamente al acudiente y/o padre para que se acerque a las instalaciones
+                                        del hogar a realizar su respectiva limpieza. De no poder hacerlo autoriza a la
+                                        docente del grupo para que lo haga siempre y cuando el niño o niña traiga su
+                                        respectiva ropa.
+                                        SI --------------------------- NO---------------------- </P>
+                                    <p> 8. Se debe promover el buen ambiente en el colegio evitando chismes o
+                                        comentarios negativos que perjudiquen el buen nombre tanto de las docentes,
+                                        auxiliares y colegio. </P>
+                                    <p> 9. Para cualquier inquietud, queja o reclamo se deberá seguir el conducto
+                                        regular que es: coordinadora, docentes, junta interna de padres. </P>
+                                    <p> 10. Participar responsablemente y activamente en la actividad cualquiera que sea
+                                        programadas por el colegio para el beneficio, integración y aprendizaje del niño
+                                        o niña. </P>
+                                    <p> 11. Tratar con respeto y dignidad a los docentes y entes directivos del colegio. </P>
+                                    <p> 12. Darle continuidad a los hábitos de higiene, aseo personal alimentación que
+                                        se fomentan en el colegio durante los fines de semana y vacaciones. </P>
+                                    <p> 13. Dar buen ejemplo en la casa, en la calle en todas partes donde se
+                                        encuentran, promoviendo el buen trato, el respeto, la unidad, el calor familiar,
+                                        el amor y el temor por nuestro papito DIOS. </P>
+
+                                    <p>  AUTORIZACION: permito que se le tomen fotos al niño o niño que represento como
+                                        acudiente, estas pueden ser publicadas en las redes sociales, siempre y cuando
+                                        no se afecte la dignidad del menor.
+                                   
+                                    </P>
+
                                     <hr>
                                 </div>
-                                <div class="form-group col-md-12">
-                                    <select class="form-control" name="section_grado" id="section_grado" required>
-                                        <option value="">Seleccione al grado que desea ingresar</option>
-                                        <option value="salacuna">Salacuna</option>
-                                        <option value="parvulos">Parvulos</option>
-                                        <option value="pre_jardin">Pre-jardín</option>
-                                        <option value="jardin">Jardín</option>
-                                        <option value="transicion">Transición</option>
-                                    </select>
-                                </div>
+
                                 <div class="form-group text-center col-12">
                                     <hr>
                                     <h5 class="text-dark">ACUDIENTE</h5>
@@ -231,26 +192,11 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group text-center col-12">
-                                    <h5 class="text-dark">PARA ALUMNOS NUEVOS</h5>
-                                    <hr>
-                                </div>
-                                <div class="form-group col-md-8">
-                                    <input type="text" name="proviene" id="proviene" class="form-control"
-                                        placeholder="Establecimiento privado donde proviene" required />
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <select class="form-control" name="section_regimen" id="section_regimen" required>
-                                        <option value="">Regimen</option>
-                                        <option value="privado">Privado</option>
-                                        <option value="publico">Público</option>
-                                    </select>
-                                </div>
                             </div>
                             <div>
-                            <div class="form-group text-center">
-                        <button class="btn btn-outline-primary col-md-4" type="submit">Crear</button>
-                            </div>
+                                <div class="form-group text-center">
+                                    <button class="btn btn-outline-primary col-md-4" type="submit">Crear</button>
+                                </div>
                             </div>
                         </form>
                     </div>
