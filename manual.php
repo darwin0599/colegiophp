@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php  include ('header.php'); ?>
 
 <!-- ======= Seccion de informacion ======= -->
 <div class="container manual">

@@ -1,3 +1,32 @@
+<?php
+session_start();
+error_reporting(0);
+include ("config.php");
+if ($_SERVER['REQUEST_METHOD']=="POST") {
+    var_dump("entra a post");
+    if(isset($_POST['usuario']) && trim($_POST['usuario']) && isset($_POST['password']) && trim($_POST['password'])){
+        var_dump("entra a validacion de campo");
+        $ret=mysqli_query($con,"SELECT * FROM users WHERE user='".$_POST['usuario']."' and password='".md5($_POST['password'])."'");
+        var_dump($ret);
+        $num=mysqli_fetch_array($ret);
+        var_dump($num);
+        if($num>0){
+            var_dump("entra exito");
+        
+        echo("entra");
+        // For stroing log if user login successfull
+        header("location:form_list_banner.php");
+        exit();
+        }
+    }else{
+        
+    }
+}
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,7 +59,7 @@
                     <div class="col-8 text-center my-4">
                         <img src="images/circle-cropped.png" class="img-fluid" alt="">
                     </div>
-                    <form class="col-12 bg-ligth d-flex justify-content-center p-3">
+                    <form class="col-12 bg-ligth d-flex justify-content-center p-3" method="post" action="inicio_sesion.php">
                         <div class="form-row justify-content-center align-items-center bg-blue">
                             <div class="col-12 text-center">
                                 <h4 class=" font-weight-bold">INICIO DE SESIÓN</h4>
@@ -40,7 +69,7 @@
                                 <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Usuario" require>
+                                <input name="usuario" type="text" class="form-control"  placeholder="Usuario" required>
                             </div>
                             </div>
                             <div class="col-12">
@@ -48,7 +77,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-lock"></i></div>
                                     </div>
-                                <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Contraseña" require>
+                                <input name="password" type="password" class="form-control" placeholder="Contraseña" require>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -60,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <a class="btn btn-outline-dark font-weight-bold mb-2 w-100">Iniciar sesión</a>
+                                <button type="submit" class="btn btn-outline-dark font-weight-bold mb-2 w-100">Iniciar sesión</button>
                             </div>
                             <div class="col-12 text-center">
                                 <a href="#" class="text-decoration-none text-dark font-weight-bold">¿Olvidó su nombre o contraseña?</a>
@@ -72,17 +101,9 @@
         </div>
         </div>
     </section>
+    
+    
     <!--Footer -->
     <?php include ('footer.php'); ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-            crossorigin="anonymous"></script>
-</body>
-</html>
+
 
